@@ -1,0 +1,20 @@
+%inputstyle{
+	width:90%;
+	height:3em;
+	margin:0 auto;
+	margin-top:1.5em;
+	border:1px solid $color1;
+	border-radius:2em;
+}
+%inputstylebtn{
+	width:90%;
+	height:48px;
+	margin:0 auto;
+	margin-top:18px;
+	background-image:linear-gradient(left, $color4 100px, $color1 200px);
+	color:$color2;
+	text-align:center;
+	border-radius:32px;
+	font-size:22px;
+	line-height:48px;
+}

@@ -1,0 +1,13 @@
+@import "susyone";
+$total-columns:12;
+$column-width:5em;
+$gutter-width:1em;
+$grid-width:$gutter-width;
+$M:47em;
+$L:75em;
+.xzh-container{
+	width:100%;
+}
+[class^='xzh-inner'] {
+	@include container;
+}

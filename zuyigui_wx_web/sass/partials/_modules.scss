@@ -1,0 +1,121 @@
+.xzh-reg-container{
+	width:100%;
+	background-image:image-url('regist_bg.png');
+	background-repeat:no-repeat;
+	background-size:contain;
+	padding-top:4em;
+	.xzh-inner-container{
+		
+	}
+	.xzh-reg-logo{
+		width:38%;
+		text-align:center;
+		margin-left:auto;
+		margin-right:auto;
+		img{
+			width:100%;
+		}
+	}
+	.xzh-reg-form-ctn{
+		legend{
+			display:none;
+		}
+		input{
+			border:0;
+			height:2.8em;
+			outline:0;
+			width:65%;
+			padding-left:1em;
+		}
+		.xzh-reg-input-icon{
+			width:2em;
+			height:2em;
+			float:left;
+			background-repeat:no-repeat;
+			background-size:cover;
+			margin-left:1em;
+			margin-top:.5em;
+		}
+		.xzh-reg-input-icon-phone{
+			background-image:image-url('phone_icon.png');
+		}
+		.xzh-reg-input-icon-pwd{
+			background-image:image-url('password_icon.png');
+		}
+		.xzh-reg-phone{
+			@extend %inputstyle;
+		}
+		.xzh-reg-check{
+			@extend %inputstyle;
+		}
+		.xzh-reg-check-input{
+			border-radius:2em 0 0 2em;
+		}
+		.xzh-send-check-num{
+			float:right;
+			border-radius:0 2em 2em 0 ;
+			background-color: $color1;
+			width:34%;
+			height:2.9em;
+			color:$color2;
+			line-height: 3em;
+			text-align:center;
+		}
+		.xzh-reg-password{
+			@extend %inputstyle;
+		}
+		.xzh-reg-service-agree{
+			text-align:center;
+			color:$color3;
+			margin-top:2em;
+		}
+		a{
+			color:$color1;
+		}
+		.xzh-reg-btn{
+			@extend %inputstylebtn;
+		}
+		.xzh-reg-log{
+			color:$color3;
+			text-align:center;
+			margin-top:1em;
+		}
+	}
+	.xzh-reg-another-log{
+		padding-top:3em;
+		.xzh-reg-another-log-title{
+			position:relative;
+			width:100%;
+			height:1px;
+			background-color: $color3;
+		}
+		.xzh-reg-another-log-title-txt{
+			position:absolute;
+			width:8em;
+			text-align:center;
+			color:$color3;
+			background-color: $color2;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+		}
+		.xzh-reg-another-log-icon-ctn{
+			width:60%;
+			height:10em;
+			margin:0 auto;
+			margin-top:1em;
+			&::after{
+				content:"";
+				display:table;
+				clear:both;
+			}
+		}
+		.xzh-reg-another-log-icon{
+			margin-top:1.5em;
+			float:left;
+		}
+		.xzh-reg-another-log-icon+.xzh-reg-another-log-icon{
+			float:right;
+		}
+	}
+}

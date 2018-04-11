@@ -1,0 +1,542 @@
+@charset "UTF-8";
+/* line 17, ../sass/partials/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 33, ../sass/partials/_normalize.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/* line 46, ../sass/partials/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 54, ../sass/partials/_normalize.scss */
+[hidden] {
+  display: none;
+}
+
+/* line 67, ../sass/partials/_normalize.scss */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 83, ../sass/partials/_normalize.scss */
+a {
+  text-decoration: none;
+}
+/* line 90, ../sass/partials/_normalize.scss */
+a:hover, a:active {
+  outline: 0;
+}
+
+/* line 102, ../sass/partials/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 108, ../sass/partials/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 121, ../sass/partials/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 127, ../sass/partials/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/* line 143, ../sass/partials/_normalize.scss */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/* line 156, ../sass/partials/_normalize.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 174, ../sass/partials/_normalize.scss */
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* line 180, ../sass/partials/_normalize.scss */
+small {
+  font-size: 75%;
+}
+
+/* line 187, ../sass/partials/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 195, ../sass/partials/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 199, ../sass/partials/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 236, ../sass/partials/_normalize.scss */
+nav ul,
+nav ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* line 254, ../sass/partials/_normalize.scss */
+img {
+  border: 0;
+}
+
+/* line 263, ../sass/partials/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 273, ../sass/partials/_normalize.scss */
+figure {
+  margin: 0;
+}
+
+/* line 292, ../sass/partials/_normalize.scss */
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+}
+
+/* line 305, ../sass/partials/_normalize.scss */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+}
+
+/* line 319, ../sass/partials/_normalize.scss */
+button,
+input {
+  line-height: normal;
+}
+
+/* line 329, ../sass/partials/_normalize.scss */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+/* line 342, ../sass/partials/_normalize.scss */
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+/* line 352, ../sass/partials/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* line 366, ../sass/partials/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+/* line 371, ../sass/partials/_normalize.scss */
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* line 380, ../sass/partials/_normalize.scss */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 389, ../sass/partials/_normalize.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* line 400, ../sass/partials/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*!
+ * @名称：base.css
+ * @功能：1、重设浏览器默认样式
+ *       2、设置通用原子类
+ */
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+/* line 8, ../sass/partials/_base.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 11, ../sass/partials/_base.scss */
+html {
+  background: white;
+  color: black;
+  font-family: "Microsoft YaHei";
+}
+
+/* line 16, ../sass/partials/_base.scss */
+body {
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+/* line 21, ../sass/partials/_base.scss */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+}
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+/* line 26, ../sass/partials/_base.scss */
+body, button, input, select, textarea {
+  font-family: "Microsoft YaHei" !important;
+}
+
+/* line 29, ../sass/partials/_base.scss */
+input, select, textarea {
+  font-size: 100%;
+}
+
+/* 去掉 table cell 的边距并让其边重合 */
+/* line 33, ../sass/partials/_base.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ie bug：th 不继承 text-align */
+/* line 38, ../sass/partials/_base.scss */
+th {
+  text-align: inherit;
+}
+
+/* 去除默认边框 */
+/* line 42, ../sass/partials/_base.scss */
+fieldset, img {
+  border: none;
+}
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+/* line 46, ../sass/partials/_base.scss */
+iframe {
+  display: block;
+}
+
+/* 去掉列表前的标识，li 会继承 */
+/* line 50, ../sass/partials/_base.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* 对齐是排版最重要的因素，别让什么都居中 */
+/* line 54, ../sass/partials/_base.scss */
+caption, th {
+  text-align: left;
+}
+
+/* 来自yahoo，让标题都自定义，适应多个系统应用 */
+/* line 58, ../sass/partials/_base.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+/* 统一上标和下标 */
+/* line 63, ../sass/partials/_base.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 69, ../sass/partials/_base.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 72, ../sass/partials/_base.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* 默认不显示下划线，保持页面简洁 */
+/* line 76, ../sass/partials/_base.scss */
+ins, a {
+  text-decoration: none;
+}
+
+/* 去除 ie6 & ie7 焦点点状线 */
+/* line 80, ../sass/partials/_base.scss */
+a:focus, *:focus {
+  outline: none;
+}
+
+/* 清除浮动 */
+/* line 84, ../sass/partials/_base.scss */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+/* line 88, ../sass/partials/_base.scss */
+.clearfix:after {
+  clear: both;
+  overflow: hidden;
+}
+
+/* line 92, ../sass/partials/_base.scss */
+.clearfix {
+  zoom: 1;
+  /* for ie6 & ie7 */
+}
+
+/* line 95, ../sass/partials/_base.scss */
+.clear {
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+
+/* 设置显示和隐藏，通常用来与 js 配合 */
+/* line 104, ../sass/partials/_base.scss */
+.hide {
+  display: none;
+}
+
+/* line 107, ../sass/partials/_base.scss */
+.block {
+  display: block;
+}
+
+/* line 8, ../sass/partials/_layout.scss */
+.xzh-container {
+  width: 100%;
+}
+
+/* line 11, ../sass/partials/_layout.scss */
+[class^='xzh-inner'] {
+  *zoom: 1;
+  max-width: 71em;
+  _width: 71em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 38, C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+[class^='xzh-inner']:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 1, ../sass/partials/_inputstyle.scss */
+.xzh-reg-container .xzh-reg-form-ctn .xzh-reg-phone, .xzh-reg-container .xzh-reg-form-ctn .xzh-reg-check, .xzh-reg-container .xzh-reg-form-ctn .xzh-reg-password {
+  width: 90%;
+  height: 3em;
+  margin: 0 auto;
+  margin-top: 1.5em;
+  border: 1px solid #39bd8c;
+  border-radius: 2em;
+}
+
+/* line 9, ../sass/partials/_inputstyle.scss */
+.xzh-reg-container .xzh-reg-form-ctn .xzh-reg-btn {
+  width: 90%;
+  height: 48px;
+  margin: 0 auto;
+  margin-top: 18px;
+  background-image: linear-gradient(to right, #57d9d7 100px, #39bd8c 200px);
+  color: #fff;
+  text-align: center;
+  border-radius: 32px;
+  font-size: 22px;
+  line-height: 48px;
+}
+
+/* line 1, ../sass/partials/_modules.scss */
+.xzh-reg-container {
+  width: 100%;
+  background-image: url('../images/regist_bg.png?1522658854');
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 4em;
+}
+/* line 10, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-logo {
+  width: 38%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 15, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-logo img {
+  width: 100%;
+}
+/* line 20, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-form-ctn legend {
+  display: none;
+}
+/* line 23, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-form-ctn input {
+  border: 0;
+  height: 2.8em;
+  outline: 0;
+  width: 65%;
+  padding-left: 1em;
+}
+/* line 30, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-form-ctn .xzh-reg-input-icon {
+  width: 2em;
+  height: 2em;
+  float: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 1em;
+  margin-top: .5em;
+}
+/* line 39, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-form-ctn .xzh-reg-input-icon-phone {
+  background-image: url('../images/phone_icon.png?1522658681');
+}
+/* line 42, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-form-ctn .xzh-reg-input-icon-pwd {
+  background-image: url('../images/password_icon.png?1522658686');
+}
+/* line 51, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-form-ctn .xzh-reg-check-input {
+  border-radius: 2em 0 0 2em;
+}
+/* line 54, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-form-ctn .xzh-send-check-num {
+  float: right;
+  border-radius: 0 2em 2em 0;
+  background-color: #39bd8c;
+  width: 34%;
+  height: 2.9em;
+  color: #fff;
+  line-height: 3em;
+  text-align: center;
+}
+/* line 67, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-form-ctn .xzh-reg-service-agree {
+  text-align: center;
+  color: #b9b9b9;
+  margin-top: 2em;
+}
+/* line 72, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-form-ctn a {
+  color: #39bd8c;
+}
+/* line 78, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-form-ctn .xzh-reg-log {
+  color: #b9b9b9;
+  text-align: center;
+  margin-top: 1em;
+}
+/* line 84, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-another-log {
+  padding-top: 3em;
+}
+/* line 86, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-another-log .xzh-reg-another-log-title {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: #b9b9b9;
+}
+/* line 92, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-another-log .xzh-reg-another-log-title-txt {
+  position: absolute;
+  width: 8em;
+  text-align: center;
+  color: #b9b9b9;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* line 102, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-another-log .xzh-reg-another-log-icon-ctn {
+  width: 60%;
+  height: 10em;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+/* line 107, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-another-log .xzh-reg-another-log-icon-ctn::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 113, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-another-log .xzh-reg-another-log-icon {
+  margin-top: 1.5em;
+  float: left;
+}
+/* line 117, ../sass/partials/_modules.scss */
+.xzh-reg-container .xzh-reg-another-log .xzh-reg-another-log-icon + .xzh-reg-another-log-icon {
+  float: right;
+}
