@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="css/styles.css">
+	<title>保证金</title>
+</head>
+<body>
+	<div class="xzh-bail-container">
+		<div class="xzh-bail-top">
+			<div class="xzh-bail-top-txt">需要交纳保障金</div>
+			<div class="xzh-bail-top-num-ctn">
+				<span class="xzh-bail-top-num">99</span>
+				<span class="xzh-bail-top-num-rmb">元</span>
+			</div>
+			<div class="xzh-bail-top-txt xzh-bail-top-txt-des">
+				为确保合规使用，需缴纳保障金，可随时退回付款账户
+			</div>
+		</div>
+		<div class="xzh-bail-pay-ways">
+			<div class="xzh-bail-pay-ways-icon">
+				<img src="images/bail_weixin_icon.png" alt="微信">
+			</div>
+			<div class="xzh-bail-pay-ways-icon-name">
+				<div class="xzh-bail-pay-ways-icon-name-title">微信支付</div>
+				<div class="xzh-bail-pay-ways-icon-name-desc">使用微信支付，方便快捷</div>
+			</div>
+			<div class="xzh-bail-pay-ways-icon-name-check-icon">
+				<img src="images/bail_unchecked_icon.png" alt="">
+			</div>
+		</div>
+		<div class="xzh-bail-pay-ways">
+			<div class="xzh-bail-pay-ways-icon">
+				<img src="images/bail_weixin_icon.png" alt="微信">
+			</div>
+			<div class="xzh-bail-pay-ways-icon-name">
+				<div class="xzh-bail-pay-ways-icon-name-title">微信支付</div>
+				<div class="xzh-bail-pay-ways-icon-name-desc">使用微信支付，方便快捷</div>
+			</div>
+			<div class="xzh-bail-pay-ways-icon-name-check-icon">
+				<img src="images/bail_unchecked_icon.png" alt="">
+			</div>
+		</div>
+		<div class="xzh-bail-pay-ways">
+			<div class="xzh-bail-pay-ways-icon">
+				<img src="images/bail_weixin_icon.png" alt="微信">
+			</div>
+			<div class="xzh-bail-pay-ways-icon-name">
+				<div class="xzh-bail-pay-ways-icon-name-title">微信支付</div>
+				<div class="xzh-bail-pay-ways-icon-name-desc">使用微信支付，方便快捷</div>
+			</div>
+			<div class="xzh-bail-pay-ways-icon-name-check-icon">
+				<img src="images/bail_unchecked_icon.png" alt="">
+			</div>
+		</div>
+		<div class="xzh-bail-pay-btn">确认支付</div>
+	</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script>
+		$('.xzh-bail-pay-ways').click(function(){
+			$(this).find('.xzh-bail-pay-ways-icon-name-check-icon').children('img').attr('src','images/bail_checked_icon.png');
+			$(this).siblings().find('.xzh-bail-pay-ways-icon-name-check-icon').children('img').attr('src','images/bail_unchecked_icon.png');
+		});
+	</script>
+</body>
+</html>
