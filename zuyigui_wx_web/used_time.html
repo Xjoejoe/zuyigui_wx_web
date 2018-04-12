@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="css/styles.css">
+	<title>使用时长</title>
+</head>
+<body>
+	<div class="xzh-container xzh-used-time-container">
+		<div class="xzh-top-title">使用中</div>
+		<div class="xzh-inner-container">
+			<div class="xzh-used-time-txt">
+				<img src="images/used_time_clock.png" alt="时钟">
+				&nbsp;&nbsp;使用时长
+			</div>
+			<div class="xzh-used-time-num">
+				
+			</div>
+			<div class="xzh-used-time-txt">
+				注：5元/一小时
+			</div>
+			<div class="xzh-used-time-txt">
+				建议您不使用时及时关闭床柜门，及时还床
+			</div>
+			<div class="xzh-used-time-bed-box">
+				<div class="xzh-used-time-bed-box-left" id="xzh_bed_bar">
+					<div class="xzh-used-time-bed-box-left-arrow">
+						<img src="images/right_arrow.svg" alt="右箭头">
+					</div>
+					<div class="xzh-used-time-bed-box-left-bed"></div>
+				</div>
+				<div class="xzh-used-time-bed-box-right">
+					<div class="xzh-used-time-bed-box-left-bedstand"></div>
+				</div>
+			</div>
+			<div class="xzh-used-time-txt">
+				<img src="images/used_time_money.png" alt="时钟">
+				&nbsp;&nbsp;时长计费
+			</div>
+			<div class="xzh-used-time-txt">
+				<span class="xzh-used-time-txt-money">07.50</span>
+				<span class="xzh-used-time-txt-rmb">元</span>
+			</div>
+		</div>
+	</div>
+	<div class="xzh-footer-menue">
+		<div class="xzh-inner-container">
+			<div class="xzh-footer-menue-cabinet xzh-footer-menue-grid">
+				<div class="xzh-footer-menue-grid-icon">
+					<img src="images/footer_menue_cabinet.png" alt="">
+				</div>
+				<div class="xzh-footer-menue-grid-name">柜子</div>
+			</div>
+			<div class="xzh-footer-menue-bed xzh-footer-menue-grid">
+				<div class="xzh-footer-menue-grid-icon">
+					<img src="images/footer_menue_bed.png" alt="">
+				</div>
+				<div class="xzh-footer-menue-grid-name">床</div>
+			</div>
+			<div class="xzh-footer-menue-mall xzh-footer-menue-grid">
+				<div class="xzh-footer-menue-grid-icon">
+					<img src="images/footer_menue_mall.png" alt="">
+				</div>
+				<div class="xzh-footer-menue-grid-name">商城</div>
+			</div>
+			<div class="xzh-footer-menue-personal xzh-footer-menue-grid">
+				<div class="xzh-footer-menue-grid-icon">
+					<img src="images/footer_menue_personal.png" alt="">
+				</div>
+				<div class="xzh-footer-menue-grid-name">我的</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script>
+		;(function(){
+			// 比如需要这样的格式 yyyy-MM-dd hh:mm:ss
+			var date = new Date(1234567);
+			h = date.getHours() + ':';
+			if(date.getHours()<10){
+				h = '0'+h;
+			}
+			m = date.getMinutes() + ':';
+			s = date.getSeconds(); 
+			$('.xzh-used-time-num').html(h+m+s); 
+		})();
+		;(function(){
+			var bed_bar = document.getElementById('xzh_bed_bar');
+			var box_left = $('.xzh-used-time-bed-box').offset().left;
+			var left = bed_bar.offsetLeft+box_left;
+			bed_bar.ontouchstart = function(){
+				document.ontouchmove = function(event){
+					var e = event||window.event;
+					//
+					var w = event.changedTouches[0].clientX-left;
+					if(w<=16){
+						w= 16;
+					}
+					if(w>=140){
+						w = 140;
+						console.log('closed',w);
+						document.ontouchmove = null;
+						return;
+					}
+					bed_bar.style.left = w+'px';
+				}
+				//
+				document.onselectstart = function(){
+					return false;
+				}
+				//
+				document.ontouchend = function(){
+					document.ontouchmove = null;
+					//
+					document.onselectstart = null;
+				}
+			}
+		})();
+	</script>
+</body>
+</html>

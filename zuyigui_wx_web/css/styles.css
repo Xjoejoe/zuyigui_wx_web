@@ -392,6 +392,76 @@ a:focus, *:focus {
   clear: both;
 }
 
+/* line 14, ../sass/partials/_layout.scss */
+.xzh-top-title {
+  width: 100%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #39bd8c;
+  color: #fff;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* line 23, ../sass/partials/_layout.scss */
+.xzh-footer-menue {
+  position: fixed;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  z-index: 990;
+  bottom: 0;
+  background-color: #fff;
+}
+/* line 33, ../sass/partials/_layout.scss */
+.xzh-footer-menue .xzh-footer-menue-grid {
+  width: 10%;
+  float: left;
+}
+/* line 37, ../sass/partials/_layout.scss */
+.xzh-footer-menue .xzh-footer-menue-grid-active {
+  color: #39bd8c;
+}
+/* line 40, ../sass/partials/_layout.scss */
+.xzh-footer-menue .xzh-footer-menue-grid + .xzh-footer-menue-grid {
+  margin-left: 4em;
+}
+/* line 43, ../sass/partials/_layout.scss */
+.xzh-footer-menue img {
+  width: 100%;
+}
+/* line 46, ../sass/partials/_layout.scss */
+.xzh-footer-menue .xzh-footer-menue-grid-name {
+  text-align: center;
+}
+
+/* line 50, ../sass/partials/_layout.scss */
+.xzh-page-cover-ctn {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  display: none;
+}
+/* line 57, ../sass/partials/_layout.scss */
+.xzh-page-cover-ctn .xzh-page-cover {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.6;
+}
+/* line 63, ../sass/partials/_layout.scss */
+.xzh-page-cover-ctn .xzh-page-cover-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 10px;
+}
+
 /* line 1, ../sass/partials/_inputstyle.scss */
 .xzh-reg-container .xzh-reg-form-ctn .xzh-reg-phone, .xzh-reg-container .xzh-reg-form-ctn .xzh-reg-check, .xzh-reg-container .xzh-reg-form-ctn .xzh-reg-password, .xzh-login-container .xzh-log-form-ctn .xzh-log-phone, .xzh-login-container .xzh-log-form-ctn .xzh-log-password {
   width: 90%;
@@ -403,7 +473,7 @@ a:focus, *:focus {
 }
 
 /* line 9, ../sass/partials/_inputstyle.scss */
-.xzh-reg-container .xzh-reg-form-ctn .xzh-reg-btn, .xzh-login-container .xzh-log-form-ctn .xzh-log-btn, .xzh-bail-container .xzh-bail-pay-btn {
+.xzh-reg-container .xzh-reg-form-ctn .xzh-reg-btn, .xzh-login-container .xzh-log-form-ctn .xzh-log-btn, .xzh-bail-container .xzh-bail-pay-btn, .xzh-my-cabinet .xzh-cabinet-buy-more, .xzh-pay-money-ctn .xzh-pay-money-confirm-btn {
   width: 90%;
   height: 48px;
   margin: 0 auto;
@@ -414,6 +484,13 @@ a:focus, *:focus {
   border-radius: 32px;
   font-size: 22px;
   line-height: 48px;
+}
+
+/* line 21, ../sass/partials/_inputstyle.scss */
+.xzh-footer-menue::after, .xzh-my-cabinet .xzh-cabinet-grid .xzh-cabinet-grid-price-ctn::after, .xzh-used-time-container .xzh-used-time-bed-box::after, .xzh-used-time-container .xzh-used-time-bed-box-right::after, .xzh-cart-container .xzh-cart-grid::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* line 1, ../sass/partials/_modules.scss */
@@ -686,4 +763,278 @@ a:focus, *:focus {
 .xzh-bail-container .xzh-bail-pay-ways-icon-name-check-icon {
   float: right;
   padding-top: .6em;
+}
+
+/* line 253, ../sass/partials/_modules.scss */
+.xzh-my-cabinet {
+  padding-bottom: 5em;
+}
+/* line 255, ../sass/partials/_modules.scss */
+.xzh-my-cabinet .xzh-cabinet-grid {
+  width: 48%;
+  float: left;
+  margin-top: 1em;
+  padding-bottom: .5em;
+  box-shadow: 2px 2px 2px 2px #CCC;
+}
+/* line 261, ../sass/partials/_modules.scss */
+.xzh-my-cabinet .xzh-cabinet-grid img {
+  width: 100%;
+}
+/* line 264, ../sass/partials/_modules.scss */
+.xzh-my-cabinet .xzh-cabinet-grid .xzh-cabinet-grid-name-ctn {
+  padding: .5em;
+}
+/* line 266, ../sass/partials/_modules.scss */
+.xzh-my-cabinet .xzh-cabinet-grid .xzh-cabinet-grid-name-ctn::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 272, ../sass/partials/_modules.scss */
+.xzh-my-cabinet .xzh-cabinet-grid .xzh-cabinet-grid-name {
+  float: left;
+}
+/* line 275, ../sass/partials/_modules.scss */
+.xzh-my-cabinet .xzh-cabinet-grid .xzh-cabinet-grid-name-pay {
+  float: right;
+  width: 5em;
+  height: 1.2em;
+  line-height: 1.2em;
+  background-color: #39bd8c;
+  border-radius: 30px;
+  text-align: center;
+  color: #fff;
+}
+/* line 285, ../sass/partials/_modules.scss */
+.xzh-my-cabinet .xzh-cabinet-grid .xzh-cabinet-grid-price-ctn {
+  padding: .5em;
+}
+/* line 291, ../sass/partials/_modules.scss */
+.xzh-my-cabinet .xzh-cabinet-grid .xzh-cabinet-grid-price-market {
+  color: #b9b9b9;
+}
+/* line 294, ../sass/partials/_modules.scss */
+.xzh-my-cabinet .xzh-cabinet-grid .xzh-cabinet-grid-price-current {
+  color: #fa0029;
+}
+/* line 298, ../sass/partials/_modules.scss */
+.xzh-my-cabinet .xzh-cabinet-grid:nth-child(even) {
+  margin-left: .5em;
+}
+/* line 301, ../sass/partials/_modules.scss */
+.xzh-my-cabinet .xzh-cabinet-buy-more {
+  width: 80%;
+}
+
+/* line 306, ../sass/partials/_modules.scss */
+.xzh-cabinet-pay-caution {
+  width: 5em;
+  height: 5em;
+  margin: 0 auto;
+  background-color: #f86227;
+  box-shadow: 0 0 3px 3px #fa8658;
+  color: #fff;
+  text-align: center;
+  line-height: 5em;
+  border-radius: 50%;
+}
+
+/* line 317, ../sass/partials/_modules.scss */
+.xzh-cabinet-pay-caution-txt {
+  color: #39bd8c;
+  margin-top: 2em;
+  text-align: center;
+}
+
+/* line 323, ../sass/partials/_modules.scss */
+.xzh-used-time-container {
+  background-image: linear-gradient(to top, #57d9d7 100px, #39bd8c 400px);
+  padding-bottom: 2em;
+}
+/* line 326, ../sass/partials/_modules.scss */
+.xzh-used-time-container .xzh-inner-container {
+  padding-top: 3em;
+  padding-bottom: 5em;
+}
+/* line 330, ../sass/partials/_modules.scss */
+.xzh-used-time-container .xzh-used-time-txt {
+  width: 100%;
+  margin: 0 auto;
+  color: #fff;
+  height: 3em;
+  line-height: 3em;
+  text-align: center;
+}
+/* line 337, ../sass/partials/_modules.scss */
+.xzh-used-time-container .xzh-used-time-txt img {
+  width: 2em;
+  vertical-align: middle;
+}
+/* line 342, ../sass/partials/_modules.scss */
+.xzh-used-time-container .xzh-used-time-num {
+  margin-top: .5em;
+  color: #fff;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+}
+/* line 349, ../sass/partials/_modules.scss */
+.xzh-used-time-container .xzh-used-time-bed-box {
+  width: 60%;
+  height: 8em;
+  overflow-x: hidden;
+  margin: 0 auto;
+  margin-top: 1em;
+  position: relative;
+}
+/* line 360, ../sass/partials/_modules.scss */
+.xzh-used-time-container .xzh-used-time-bed-box-left {
+  position: absolute;
+  top: 0;
+  left: 6%;
+  width: 68%;
+}
+/* line 366, ../sass/partials/_modules.scss */
+.xzh-used-time-container .xzh-used-time-bed-box-left-arrow {
+  text-align: center;
+  animation: toLeft 1.5s ease-in-out infinite running 0s both normal;
+}
+@keyframes toLeft {
+  0% {
+    transform: translateX(0px);
+  }
+  30% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(0px);
+  }
+  90% {
+    transform: translateX(-6px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+/* line 388, ../sass/partials/_modules.scss */
+.xzh-used-time-container .xzh-used-time-bed-box-left-bed {
+  width: 100%;
+  height: 3em;
+  background-color: #25a5a3;
+  position: relative;
+  border-left: 2px solid #fff;
+}
+/* line 394, ../sass/partials/_modules.scss */
+.xzh-used-time-container .xzh-used-time-bed-box-left-bed::before {
+  content: "";
+  position: absolute;
+  width: .8em;
+  height: 4em;
+  top: -.5em;
+  left: -.9em;
+  background-color: #fff;
+}
+/* line 403, ../sass/partials/_modules.scss */
+.xzh-used-time-container .xzh-used-time-bed-box-left-bed::after {
+  content: "";
+  position: absolute;
+  width: .8em;
+  height: 3em;
+  top: 0;
+  right: .5em;
+  background-color: #fff;
+}
+/* line 413, ../sass/partials/_modules.scss */
+.xzh-used-time-container .xzh-used-time-bed-box-right {
+  position: absolute;
+  width: 26%;
+  right: 0;
+}
+/* line 421, ../sass/partials/_modules.scss */
+.xzh-used-time-container .xzh-used-time-bed-box-left-bedstand {
+  width: 100%;
+  height: 8em;
+  background-color: #fff;
+}
+/* line 426, ../sass/partials/_modules.scss */
+.xzh-used-time-container .xzh-used-time-txt-money {
+  font-size: 3em;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* line 434, ../sass/partials/_modules.scss */
+.xzh-pay-money-ctn .xzh-pay-money-bg {
+  width: 100%;
+  margin-top: 1.5em;
+  background-image: url('../images/pay_money_bg.jpg?1522719163');
+  background-size: cover;
+  padding-bottom: 3em;
+}
+/* line 441, ../sass/partials/_modules.scss */
+.xzh-pay-money-ctn .xzh-pay-money {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 3em;
+}
+/* line 446, ../sass/partials/_modules.scss */
+.xzh-pay-money-ctn .xzh-pay-money-txt-ctn {
+  width: 100%;
+  height: 1px;
+  background-color: #b9b9b9;
+  position: relative;
+}
+/* line 452, ../sass/partials/_modules.scss */
+.xzh-pay-money-ctn .xzh-pay-mony-txt {
+  width: 8em;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+/* line 461, ../sass/partials/_modules.scss */
+.xzh-pay-money-ctn .xzh-pay-money-num-ctn {
+  margin-top: 3em;
+  text-align: center;
+}
+/* line 465, ../sass/partials/_modules.scss */
+.xzh-pay-money-ctn .xzh-pay-money-num {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+/* line 469, ../sass/partials/_modules.scss */
+.xzh-pay-money-ctn .xzh-pay-money-tip {
+  margin-top: 1.5em;
+  text-align: center;
+  color: #b9b9b9;
+  font-size: .8em;
+}
+
+/* line 481, ../sass/partials/_modules.scss */
+.xzh-cart-container .xzh-back-history {
+  width: 1.5em;
+  float: left;
+}
+/* line 484, ../sass/partials/_modules.scss */
+.xzh-cart-container .xzh-back-history img {
+  width: 100%;
+}
+/* line 488, ../sass/partials/_modules.scss */
+.xzh-cart-container .xzh-cart-editor {
+  float: right;
+}
+/* line 496, ../sass/partials/_modules.scss */
+.xzh-cart-container .xzh-cart-grid-check {
+  float: left;
+}
+/* line 499, ../sass/partials/_modules.scss */
+.xzh-cart-container .xzh-cart-grid-detail {
+  float: left;
+}
+/* line 502, ../sass/partials/_modules.scss */
+.xzh-cart-container .xzh-cart-grid-num-ctn {
+  float: left;
 }

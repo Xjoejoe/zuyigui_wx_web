@@ -250,3 +250,256 @@
 		@extend %inputstylebtn;
 	}
 }
+.xzh-my-cabinet{
+	padding-bottom:5em;
+	.xzh-cabinet-grid{
+		width:48%;
+		float:left;
+		margin-top:1em;
+		padding-bottom:.5em;
+		box-shadow:2px 2px 2px 2px #CCC;
+		img{
+			width:100%;
+		}
+		.xzh-cabinet-grid-name-ctn{
+			padding:.5em;
+			&::after{
+				content:"";
+				display:table;
+				clear:both;
+			}
+		}
+		.xzh-cabinet-grid-name{
+			float:left;
+		}
+		.xzh-cabinet-grid-name-pay{
+			float:right;
+			width:5em;
+			height:1.2em;
+			line-height:1.2em;
+			background-color: $color1;
+			border-radius:30px;
+			text-align:center;
+			color:$color2;
+		}
+		.xzh-cabinet-grid-price-ctn{
+			padding:.5em;
+			&::after{
+				@extend %clear;
+			}
+		}
+		.xzh-cabinet-grid-price-market{
+			color:$color3;
+		}
+		.xzh-cabinet-grid-price-current{
+			color:$color7;
+		}
+	}
+	.xzh-cabinet-grid:nth-child(even){
+		margin-left:.5em;
+	}
+	.xzh-cabinet-buy-more{
+		@extend %inputstylebtn;
+		width:80%;
+	}
+}
+.xzh-cabinet-pay-caution{
+	width:5em;
+	height:5em;
+	margin:0 auto;
+	background-color: $color8;
+	box-shadow:0 0 3px 3px $color9;
+	color:$color2;
+	text-align:center;
+	line-height:5em;
+	border-radius:50%;
+}
+.xzh-cabinet-pay-caution-txt{
+	color:$color1;
+	margin-top:2em;
+	text-align:center;
+}
+
+.xzh-used-time-container{
+	background-image:linear-gradient(bottom, $color4 100px, $color1 400px);
+	padding-bottom:2em;
+	.xzh-inner-container{
+		padding-top:3em;
+		padding-bottom:5em;
+	}
+	.xzh-used-time-txt{
+		width:100%;
+		margin:0 auto;
+		color:$color2;
+		height:3em;
+		line-height:3em;
+		text-align:center;
+		img{
+			width:2em;
+			vertical-align:middle;
+		}
+	}
+	.xzh-used-time-num{
+		margin-top:.5em;
+		color:$color2;
+		font-size:3em;
+		font-weight:bold;
+		text-align:center;
+	}
+	.xzh-used-time-bed-box{
+		width:60%;
+		height:8em;
+		overflow-x:hidden;
+		margin:0 auto;
+		margin-top:1em;
+		position:relative;
+		&::after{
+			@extend %clear;
+		}
+	}
+	.xzh-used-time-bed-box-left{
+		position:absolute;
+		top:0;
+		left:6%;
+		width:68%;
+	}
+	.xzh-used-time-bed-box-left-arrow{
+		text-align:center;
+		animation:toLeft 1.5s ease-in-out infinite running 0s both normal;
+	}
+	@keyframes toLeft{
+		0%{
+			transform:translateX(0px);
+		}
+		30%{
+			transform:translateX(6px);
+		}
+		60%{
+			transform:translateX(0px);
+		}
+		90%{
+			transform:translateX(-6px);
+		}
+		100%{
+			transform:translateX(0px);
+		}
+
+	}
+	.xzh-used-time-bed-box-left-bed{
+		width:100%;
+		height:3em;
+		background-color: darken($color4,20%);
+		position:relative;
+		border-left:2px solid $color2;
+		&::before{
+			content:"";
+			position:absolute;
+			width:.8em;
+			height:4em;
+			top:-.5em;
+			left:-.9em;
+			background-color: $color2;
+		}
+		&::after{
+			content:"";
+			position:absolute;
+			width:.8em;
+			height:3em;
+			top:0;
+			right:.5em;
+			background-color: $color2;
+		}
+	}
+	.xzh-used-time-bed-box-right{
+		position:absolute;
+		width:26%;
+		right:0;
+		&::after{
+			@extend %clear;
+		}
+	}
+	.xzh-used-time-bed-box-left-bedstand{
+		width:100%;
+		height:8em;
+		background-color: $color2;
+	}
+	.xzh-used-time-txt-money{
+		font-size:3em;
+		font-weight:bold;
+		color:$color2;
+	}
+}
+
+.xzh-pay-money-ctn{
+	.xzh-pay-money-bg{
+		width:100%;
+		margin-top:1.5em;
+		background-image:image-url('pay_money_bg.jpg');
+		background-size:cover;
+		padding-bottom:3em;
+	}
+	.xzh-pay-money{
+		width:90%;
+		margin:0 auto;
+		padding-top:3em;
+	}
+	.xzh-pay-money-txt-ctn{
+		width:100%;
+		height:1px;
+		background-color: $color3;
+		position:relative;
+	}
+	.xzh-pay-mony-txt{
+		width:8em;
+		background-color: $color2;
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform:translate(-50%,-50%);
+		text-align:center;
+	}
+	.xzh-pay-money-num-ctn{
+		margin-top:3em;
+		text-align:center;
+	}
+	.xzh-pay-money-num{
+		font-size:2.5em;
+		font-weight:bold;
+	}
+	.xzh-pay-money-tip{
+		margin-top:1.5em;
+		text-align:center;
+		color:$color3;
+		font-size:.8em;
+	}
+	.xzh-pay-money-confirm-btn{
+		@extend %inputstylebtn;
+	}
+}
+
+.xzh-cart-container{
+	.xzh-back-history{
+		width:1.5em;
+		float:left;
+		img{
+			width:100%;
+		}
+	}
+	.xzh-cart-editor{
+		float:right;
+	}
+	.xzh-cart-grid{
+		&::after{
+			@extend %clear;
+		}
+	}
+	.xzh-cart-grid-check{
+		float:left;
+	}
+	.xzh-cart-grid-detail{
+		float:left;
+	}
+	.xzh-cart-grid-num-ctn{
+		float:left;
+	}
+}
