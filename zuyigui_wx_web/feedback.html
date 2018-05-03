@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="css/styles.css">
+	<title>意见反馈</title>
+</head>
+<body>
+	<div class="xzh-feedback-ctn">
+		<div class="xzh-top-title">
+			<span class="xzh-back-history"><img src="images/cart_back.png" alt="返回"></span>
+			<span class="xzh-top-title-txt">
+				意见反馈
+			</span>
+		</div>
+		<div class="xzh-feedback-tip">问题描述</div>
+		<div class="xzh-feedback-form-wrap">
+			<form action="#" method="post" class="xzh-feedback-form">
+				<fieldset>
+					<legend>问题提交</legend>
+					<div class="xzh-feedback-border">
+						<textarea name="feedback_text" id="feedback_txt" cols="30" rows="10"></textarea>
+						<div>
+							<label for="feedback_img" id="feedback_img_trigger">
+								<img src="images/add_img.svg" alt="添加图片">
+							</label>
+							<img src="#" alt="" id="review_img">
+							<input type="file" id="feedback_img" accept="image/png, image/jpeg, image/gif, image/jpg" style="position:absolute;clip:rect(0 0 0 0);" @change="addImage">
+						</div>
+					</div>
+					<input type="submit" value="提交" class="xzh-feedback-submit">
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.form.js"></script>
+	<script>
+	    $('#feedback_img').on('change', function () {
+		     var imgdate = $(this).get(0);
+		     if (imgdate.files && imgdate.files[0]) {
+		         $('#review_img').attr('src',window.URL.createObjectURL(imgdate.files[0])) = window.URL.createObjectURL(imgdate.files[0]);
+		     }
+	    });
+	</script>
+</body>
+</html>

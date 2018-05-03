@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="css/styles.css">
+	<title>我的资料</title>
+</head>
+<body>
+	<div class="xzh-personal-information-ctn">
+		<div class="xzh-top-title">
+			<span class="xzh-back-history"><img src="images/cart_back.png" alt="返回"></span>
+			<span class="xzh-top-title-txt">
+				我的资料
+			</span>
+		</div>
+		<div class="xzh-personal-information-top">
+			<div class="xzh-personal-information-grid">
+				<div class="xzh-personal-information-grid-left">头像</div>
+				<div class="xzh-personal-information-grid-right">
+					<span class="xzh-personal-information-head-img">
+						<img src="images/personal_header.png" alt="头像">
+					</span>
+					<span class="xzh-personal-information-grid-right-arrow">
+						<img src="images/point_right.svg" alt="箭头">
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="xzh-personal-information-grid xzh-personal-information-name">
+			<div class="xzh-personal-information-grid-left">昵称</div>
+			<div class="xzh-personal-information-grid-right">
+				<span class="xzh-personal-information-name-txt">售后</span>
+				<span class="xzh-personal-information-grid-right-arrow">
+					<img src="images/point_right.svg" alt="箭头">
+				</span>
+			</div>
+		</div>
+		<div class="xzh-personal-information-grid">
+			<div class="xzh-personal-information-grid-left">信用等级</div>
+			<div class="xzh-personal-information-grid-right">
+				售后
+				<span class="xzh-personal-information-grid-right-arrow">
+					<img src="images/point_right.svg" alt="箭头">
+				</span>
+			</div>
+		</div>
+		<div class="xzh-personal-information-grid">
+			<div class="xzh-personal-information-grid-left">收货地址</div>
+			<div class="xzh-personal-information-grid-right">
+				售后
+				<span class="xzh-personal-information-grid-right-arrow">
+					<img src="images/point_right.svg" alt="箭头">
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="xzh-page-cover-ctn xzh-personal-information-head-page-cover">
+		<div class="xzh-page-cover"></div>
+		<div class="xzh-page-cover-content">
+			<div class="xzh-personal-information-camera">拍照</div>
+			<div class="xzh-personal-information-local">从相册里面选择</div>
+		</div>
+	</div>
+	<div class="xzh-page-cover-ctn xzh-personal-information-name-page-cover">
+		<div class="xzh-page-cover"></div>
+		<div class="xzh-page-cover-content">
+			<div class="xzh-personal-information-input">
+				新昵称：<input type="text" name='new_name' id="new_name_input">
+			</div>
+			<div class="xzh-personal-information-confirm">
+				确定修改
+			</div>
+		</div>
+	</div>
+	<script src='js/jquery-1.8.3.min.js'></script>
+	<script>
+		$(document).ready(function(){
+			$('.xzh-personal-information-head-img').click(function(){
+				$('.xzh-personal-information-head-page-cover').show();
+			});
+			$('.xzh-personal-information-name').click(function(){
+				$('.xzh-personal-information-name-page-cover').show();
+			});
+			$('.xzh-personal-information-confirm').click(function(){
+				var new_name = $('#new_name_input').val();
+				$('.xzh-personal-information-name-txt').html(new_name);
+				$('#new_name_input').val('');
+				$(this).parents('.xzh-page-cover-ctn').hide();
+			});
+			$('.xzh-page-cover').click(function(){
+				$(this).parent('.xzh-page-cover-ctn').hide();
+			});
+		});
+	</script>
+</body>
+</html>

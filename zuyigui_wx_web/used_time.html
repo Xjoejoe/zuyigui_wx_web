@@ -86,14 +86,15 @@
 			$('.xzh-used-time-num').html(h+m+s); 
 		})();
 		;(function(){
-			var bed_bar = document.getElementById('xzh_bed_bar');
+			var bed_bar = $('#xzh_bed_bar');
 			var box_left = $('.xzh-used-time-bed-box').offset().left;
-			var left = bed_bar.offsetLeft+box_left;
-			bed_bar.ontouchstart = function(){
+			var left = box_left+bed_bar.offset().left;
+			$('#xzh_bed_bar')[0].ontouchstart = function(){
 				document.ontouchmove = function(event){
 					var e = event||window.event;
-					//
+
 					var w = event.changedTouches[0].clientX-left;
+					console.log(w);
 					if(w<=16){
 						w= 16;
 					}
@@ -103,7 +104,7 @@
 						document.ontouchmove = null;
 						return;
 					}
-					bed_bar.style.left = w+'px';
+					bed_bar.css('left',w+'px');
 				}
 				//
 				document.onselectstart = function(){

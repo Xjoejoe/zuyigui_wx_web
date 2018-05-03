@@ -402,39 +402,56 @@ a:focus, *:focus {
   text-align: center;
   font-size: 1.2em;
 }
+/* line 22, ../sass/partials/_layout.scss */
+.xzh-top-title .xzh-back-history {
+  width: 1.5em;
+  float: left;
+}
+/* line 25, ../sass/partials/_layout.scss */
+.xzh-top-title .xzh-back-history img {
+  width: 100%;
+}
 
-/* line 23, ../sass/partials/_layout.scss */
+/* line 30, ../sass/partials/_layout.scss */
 .xzh-footer-menue {
   position: fixed;
-  padding-top: .5em;
-  padding-bottom: .5em;
+  width: 100%;
+  padding-top: .2em;
+  padding-bottom: .2em;
   z-index: 990;
   bottom: 0;
   background-color: #fff;
+  /* .xzh-footer-menue-grid+.xzh-footer-menue-grid{
+  	margin-left:3em;
+  } */
 }
-/* line 33, ../sass/partials/_layout.scss */
+/* line 41, ../sass/partials/_layout.scss */
+.xzh-footer-menue .xzh-inner-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/* line 46, ../sass/partials/_layout.scss */
 .xzh-footer-menue .xzh-footer-menue-grid {
-  width: 10%;
-  float: left;
+  width: 15%;
+  color: #b9b9b9;
+  text-align: center;
 }
-/* line 37, ../sass/partials/_layout.scss */
+/* line 51, ../sass/partials/_layout.scss */
 .xzh-footer-menue .xzh-footer-menue-grid-active {
   color: #39bd8c;
 }
-/* line 40, ../sass/partials/_layout.scss */
-.xzh-footer-menue .xzh-footer-menue-grid + .xzh-footer-menue-grid {
-  margin-left: 4em;
-}
-/* line 43, ../sass/partials/_layout.scss */
+/* line 57, ../sass/partials/_layout.scss */
 .xzh-footer-menue img {
-  width: 100%;
+  width: 2em;
 }
-/* line 46, ../sass/partials/_layout.scss */
+/* line 60, ../sass/partials/_layout.scss */
 .xzh-footer-menue .xzh-footer-menue-grid-name {
   text-align: center;
+  font-size: .7em;
 }
 
-/* line 50, ../sass/partials/_layout.scss */
+/* line 65, ../sass/partials/_layout.scss */
 .xzh-page-cover-ctn {
   width: 100%;
   height: 100vh;
@@ -443,14 +460,14 @@ a:focus, *:focus {
   z-index: 999;
   display: none;
 }
-/* line 57, ../sass/partials/_layout.scss */
+/* line 72, ../sass/partials/_layout.scss */
 .xzh-page-cover-ctn .xzh-page-cover {
   width: 100%;
   height: 100vh;
   background-color: #000;
   opacity: 0.6;
 }
-/* line 63, ../sass/partials/_layout.scss */
+/* line 78, ../sass/partials/_layout.scss */
 .xzh-page-cover-ctn .xzh-page-cover-content {
   position: fixed;
   top: 50%;
@@ -473,7 +490,7 @@ a:focus, *:focus {
 }
 
 /* line 9, ../sass/partials/_inputstyle.scss */
-.xzh-reg-container .xzh-reg-form-ctn .xzh-reg-btn, .xzh-login-container .xzh-log-form-ctn .xzh-log-btn, .xzh-bail-container .xzh-bail-pay-btn, .xzh-my-cabinet .xzh-cabinet-buy-more, .xzh-pay-money-ctn .xzh-pay-money-confirm-btn {
+.xzh-reg-container .xzh-reg-form-ctn .xzh-reg-btn, .xzh-login-container .xzh-log-form-ctn .xzh-log-btn, .xzh-bail-container .xzh-bail-pay-btn, .xzh-my-cabinet .xzh-cabinet-buy-more, .xzh-pay-money-ctn .xzh-pay-money-confirm-btn, .xzh-balance-ctn .xzh-balance-recharge, .xzh-balance-ctn .xzh-balance-cash, .xzh-feedback-ctn .xzh-feedback-submit {
   width: 90%;
   height: 48px;
   margin: 0 auto;
@@ -484,10 +501,11 @@ a:focus, *:focus {
   border-radius: 32px;
   font-size: 22px;
   line-height: 48px;
+  display: block;
 }
 
-/* line 21, ../sass/partials/_inputstyle.scss */
-.xzh-footer-menue::after, .xzh-my-cabinet .xzh-cabinet-grid .xzh-cabinet-grid-price-ctn::after, .xzh-used-time-container .xzh-used-time-bed-box::after, .xzh-used-time-container .xzh-used-time-bed-box-right::after, .xzh-cart-container .xzh-cart-grid::after, .xzh-personal-container .xzh-personal-menue-top::after, .xzh-personal-container .xzh-personal-menue-middle::after, .xzh-personal-container .xzh-personal-menue-middle-top::after, .xzh-personal-container .xzh-personal-menue-bottom-grid::after, .xzh-mall-container .xzh-top-title::after, .xzh-mall-container .xzh-mall-menue-ctn::after, .xzh-mall-container .xzh-mall-goods-price::after {
+/* line 22, ../sass/partials/_inputstyle.scss */
+.xzh-footer-menue::after, .xzh-my-cabinet .xzh-cabinet-grid .xzh-cabinet-grid-price-ctn::after, .xzh-used-time-container .xzh-used-time-bed-box::after, .xzh-used-time-container .xzh-used-time-bed-box-right::after, .xzh-cart-container .xzh-cart-grid::after, .xzh-personal-container .xzh-personal-menue-top::after, .xzh-personal-container .xzh-personal-menue-middle::after, .xzh-personal-container .xzh-personal-menue-middle-top::after, .xzh-personal-container .xzh-personal-menue-bottom-grid::after, .xzh-mall-container .xzh-top-title::after, .xzh-mall-container .xzh-mall-menue-ctn::after, .xzh-mall-container .xzh-mall-goods-price::after, .xzh-menue-cabinet .xzh-menue-cabinet-add:after, .xzh-menue-cabinet .xzh-menue-cabinet-weather-degree:after, .xzh-menue-cabinet .xzh-menue-cabinet-weather-detail:after, .xzh-menue-cabinet .xzh-menue-cabinet-equipment:after, .xzh-delivery-address-ctn .xzh-delivery-address-grid:after, .xzh-delivery-address-ctn .xzh-delivery-address-detail:after, .xzh-delivery-address-ctn .xzh-delivery-address-editor:after, .xzh-notification-ctn .xzh-notification-grid:after, .xzh-personal-information-ctn .xzh-personal-information-grid:after, .xzh-personal-orders-ctn .xzh-personal-orders-grid:after, .xzh-personal-orders-ctn .xzh-personal-orders-grid-top:after, .xzh-personal-orders-ctn .xzh-personal-orders-grid-detail:after, .xzh-personal-orders-ctn .xzh-personal-orders-grid-middle:after {
   content: "";
   display: table;
   clear: both;
@@ -1024,7 +1042,7 @@ a:focus, *:focus {
 }
 /* line 488, ../sass/partials/_modules.scss */
 .xzh-cart-container .xzh-inner-container {
-  padding-bottom: 5em;
+  padding-bottom: 7em;
 }
 /* line 491, ../sass/partials/_modules.scss */
 .xzh-cart-container .xzh-cart-editor {
@@ -1094,15 +1112,15 @@ a:focus, *:focus {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 5em;
+  height: 7em;
   background-color: #fff;
 }
 /* line 553, ../sass/partials/_modules.scss */
 .xzh-cart-container .xzh-cart-pay-menue-all-check {
   float: left;
-  width: 30%;
-  height: 5em;
-  line-height: 5em;
+  width: 25%;
+  height: 7em;
+  line-height: 7em;
   padding-left: 1em;
 }
 /* line 559, ../sass/partials/_modules.scss */
@@ -1113,7 +1131,7 @@ a:focus, *:focus {
 /* line 564, ../sass/partials/_modules.scss */
 .xzh-cart-container .xzh-cart-pay-menue-total-price {
   float: left;
-  width: 25%;
+  width: 30%;
   padding-top: 1em;
   text-align: right;
   padding-right: 0em;
@@ -1128,8 +1146,8 @@ a:focus, *:focus {
 .xzh-cart-container .xzh-cart-pay-menue-pay-btn {
   float: right;
   width: 34%;
-  height: 5em;
-  line-height: 5em;
+  height: 100%;
+  line-height: 7em;
   text-align: center;
   background-color: #f86227;
   color: #fff;
@@ -1138,7 +1156,7 @@ a:focus, *:focus {
 /* line 587, ../sass/partials/_modules.scss */
 .xzh-personal-container {
   background-image: linear-gradient(to bottom, #39bd8c 100px, #57d9d7 200px);
-  padding-bottom: 73px;
+  padding-bottom: 57px;
 }
 /* line 590, ../sass/partials/_modules.scss */
 .xzh-personal-container .xzh-personal-header-img {
@@ -1403,38 +1421,533 @@ a:focus, *:focus {
   width: 48%;
   margin-top: 1em;
   box-shadow: 1px 1px 2px 2px #ececec;
+  color: #000;
 }
-/* line 844, ../sass/partials/_modules.scss */
+/* line 845, ../sass/partials/_modules.scss */
 .xzh-mall-container .xzh-mall-recommend-grid:nth-child(odd) {
   float: right;
 }
-/* line 847, ../sass/partials/_modules.scss */
+/* line 848, ../sass/partials/_modules.scss */
 .xzh-mall-container .xzh-mall-recommend-grid:nth-child(even) {
   float: left;
 }
-/* line 851, ../sass/partials/_modules.scss */
+/* line 852, ../sass/partials/_modules.scss */
 .xzh-mall-container .xzh-mall-goods-img img {
   width: 100%;
 }
-/* line 855, ../sass/partials/_modules.scss */
+/* line 856, ../sass/partials/_modules.scss */
 .xzh-mall-container .xzh-mall-goods-title {
   text-align: center;
 }
-/* line 858, ../sass/partials/_modules.scss */
+/* line 859, ../sass/partials/_modules.scss */
 .xzh-mall-container .xzh-mall-goods-price {
   margin-top: .3em;
 }
-/* line 864, ../sass/partials/_modules.scss */
+/* line 865, ../sass/partials/_modules.scss */
 .xzh-mall-container .xzh-mall-goods-price-cart {
   float: left;
 }
-/* line 866, ../sass/partials/_modules.scss */
+/* line 867, ../sass/partials/_modules.scss */
 .xzh-mall-container .xzh-mall-goods-price-cart img {
   width: 2em;
 }
-/* line 870, ../sass/partials/_modules.scss */
+/* line 871, ../sass/partials/_modules.scss */
 .xzh-mall-container .xzh-mall-goods-price-num {
   float: right;
   color: #fa0029;
   font-size: 1.1em;
+}
+
+/* line 878, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet {
+  background-image: url('../images/menue_cabinet_bg.png?1524115899');
+  background-size: cover;
+}
+/* line 886, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-add-btn {
+  float: right;
+  height: 3em;
+  line-height: 3em;
+  padding-right: .5em;
+}
+/* line 891, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-add-btn img {
+  vertical-align: middle;
+  width: 2em;
+}
+/* line 896, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-weather {
+  padding-left: 3em;
+  color: #fff;
+}
+/* line 900, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-weather-degree {
+  margin-top: .5em;
+}
+/* line 906, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-weather-degree-left {
+  float: left;
+  font-size: 2em;
+  border-right: 1px solid #fff;
+  padding-right: .3em;
+  margin-right: .3em;
+}
+/* line 913, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-weather-degree-right {
+  float: left;
+}
+/* line 916, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-weather-detail {
+  font-size: .8em;
+}
+/* line 922, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-weather-detail-left {
+  border-right: 1px solid #fff;
+  padding-right: .5em;
+  margin-right: .4em;
+  float: left;
+}
+/* line 928, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-weather-detail-right {
+  float: left;
+}
+/* line 931, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-equipment {
+  margin-left: .3em;
+  margin-right: .3em;
+  margin-top: 3em;
+  text-align: center;
+}
+/* line 940, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-equipment-left {
+  width: 20%;
+  height: 20em;
+  margin-top: .3em;
+  float: left;
+  background-color: #fff;
+  position: relative;
+}
+/* line 947, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-equipment-left div {
+  border-bottom: 1px solid #b9b9b9;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+/* line 953, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-equipment-left-top {
+  padding-top: .3em;
+  padding-bottom: .3em;
+  color: #39bd8c;
+}
+/* line 957, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-equipment-left-top img {
+  width: 2em;
+}
+/* line 961, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-equipment-bottom {
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+/* line 969, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-equipment-right {
+  width: 75%;
+  height: 22em;
+  overflow-y: scroll;
+}
+/* line 973, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-equipment-right:-webkit-scrollbar {
+  display: none;
+}
+/* line 977, ../sass/partials/_modules.scss */
+.xzh-menue-cabinet .xzh-menue-cabinet-equipment-right-grid {
+  width: 48%;
+  height: 3.8em;
+  line-height: 3.8em;
+  color: #000;
+  background-color: #fff;
+  float: left;
+  margin-left: .3em;
+  margin-top: .3em;
+}
+
+/* line 989, ../sass/partials/_modules.scss */
+.xzh-cabinet-add-container {
+  background-color: #39bd8c;
+}
+/* line 991, ../sass/partials/_modules.scss */
+.xzh-cabinet-add-container .xzh-back-history {
+  width: 1.5em;
+  float: left;
+}
+/* line 994, ../sass/partials/_modules.scss */
+.xzh-cabinet-add-container .xzh-back-history img {
+  width: 100%;
+}
+/* line 998, ../sass/partials/_modules.scss */
+.xzh-cabinet-add-container .xzh-cabinet-add-equipment-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 24em;
+  overflow-y: scroll;
+}
+/* line 1004, ../sass/partials/_modules.scss */
+.xzh-cabinet-add-container .xzh-cabinet-add-equipment-list:-webkit-scrollbar {
+  display: none;
+}
+/* line 1008, ../sass/partials/_modules.scss */
+.xzh-cabinet-add-container .xzh-cabinet-add-equipment-grid {
+  width: 48%;
+  height: 4em;
+  margin-top: .3em;
+  line-height: 4em;
+  text-align: center;
+  background-color: #fff;
+  color: #000;
+}
+/* line 1017, ../sass/partials/_modules.scss */
+.xzh-cabinet-add-container .xzh-cabinet-add-equipment-scan {
+  width: 100%;
+  height: 8em;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  border-top: 1px solid #b9b9b9;
+  padding-top: 1em;
+  text-align: center;
+}
+/* line 1028, ../sass/partials/_modules.scss */
+.xzh-cabinet-add-container .xzh-cabinet-add-equipment-scan-btn img {
+  width: 3em;
+}
+
+/* line 1035, ../sass/partials/_modules.scss */
+.xzh-cabinet-eqp-container .xzh-back-history {
+  width: 1.5em;
+  float: left;
+}
+/* line 1038, ../sass/partials/_modules.scss */
+.xzh-cabinet-eqp-container .xzh-back-history img {
+  width: 100%;
+}
+/* line 1042, ../sass/partials/_modules.scss */
+.xzh-cabinet-eqp-container .xzh-cabinet-eqp-open-cabinet {
+  margin-top: 4em;
+  text-align: center;
+}
+/* line 1045, ../sass/partials/_modules.scss */
+.xzh-cabinet-eqp-container .xzh-cabinet-eqp-open-cabinet img {
+  width: 8em;
+}
+/* line 1049, ../sass/partials/_modules.scss */
+.xzh-cabinet-eqp-container .xzh-cabinet-eqp-open-bed {
+  margin-top: 4em;
+  text-align: center;
+}
+/* line 1052, ../sass/partials/_modules.scss */
+.xzh-cabinet-eqp-container .xzh-cabinet-eqp-open-bed img {
+  width: 8em;
+}
+
+/* line 1058, ../sass/partials/_modules.scss */
+.xzh-delivery-address-ctn {
+  background-color: #b9b9b9;
+}
+/* line 1060, ../sass/partials/_modules.scss */
+.xzh-delivery-address-ctn .xzh-delivery-address-grid {
+  margin-top: 2em;
+  background-color: #fff;
+  padding: .5em;
+  padding-top: 1em;
+}
+/* line 1069, ../sass/partials/_modules.scss */
+.xzh-delivery-address-ctn .xzh-delivery-address-detail {
+  margin-top: 1em;
+}
+/* line 1075, ../sass/partials/_modules.scss */
+.xzh-delivery-address-ctn .xzh-delivery-address-detail-type {
+  float: left;
+  width: 15%;
+}
+/* line 1079, ../sass/partials/_modules.scss */
+.xzh-delivery-address-ctn .xzh-delivery-address-detail-content {
+  float: left;
+  width: 78%;
+}
+/* line 1083, ../sass/partials/_modules.scss */
+.xzh-delivery-address-ctn .xzh-delivery-address-time {
+  margin-top: 1em;
+  border-bottom: 1px solid #b9b9b9;
+}
+/* line 1087, ../sass/partials/_modules.scss */
+.xzh-delivery-address-ctn .xzh-delivery-address-editor {
+  margin-top: 1em;
+  float: right;
+}
+/* line 1094, ../sass/partials/_modules.scss */
+.xzh-delivery-address-ctn .xzh-delivery-address-editor-del, .xzh-delivery-address-ctn .xzh-delivery-address-editor-change {
+  float: left;
+  width: 4em;
+  margin-left: .5em;
+}
+
+/* line 1104, ../sass/partials/_modules.scss */
+.xzh-balance-ctn {
+  background-color: #fff;
+}
+/* line 1106, ../sass/partials/_modules.scss */
+.xzh-balance-ctn .xzh-balance-icon {
+  margin-top: 2em;
+  text-align: center;
+}
+/* line 1110, ../sass/partials/_modules.scss */
+.xzh-balance-ctn .xzh-balance-icon-txt {
+  text-align: center;
+}
+/* line 1113, ../sass/partials/_modules.scss */
+.xzh-balance-ctn .xzh-balance-money {
+  text-align: center;
+  font-size: 2.6em;
+}
+/* line 1117, ../sass/partials/_modules.scss */
+.xzh-balance-ctn .xzh-balance-recharge {
+  margin-top: 2em;
+}
+/* line 1121, ../sass/partials/_modules.scss */
+.xzh-balance-ctn .xzh-balance-cash {
+  margin-top: 2em;
+  background-image: linear-gradient(to right, #ffffff 100px, #ffffff 200px);
+  border: 1px solid #39bd8c;
+  color: #000;
+}
+
+/* line 1130, ../sass/partials/_modules.scss */
+.xzh-notification-ctn .xzh-notification-grid {
+  background-color: #fff;
+  border-bottom: 1px solid lightgray;
+  padding: .5em;
+}
+/* line 1138, ../sass/partials/_modules.scss */
+.xzh-notification-ctn .xzh-notification-img {
+  float: left;
+}
+/* line 1140, ../sass/partials/_modules.scss */
+.xzh-notification-ctn .xzh-notification-img img {
+  width: 4em;
+}
+/* line 1144, ../sass/partials/_modules.scss */
+.xzh-notification-ctn .xzh-notification-content {
+  float: left;
+  margin-left: .5em;
+}
+/* line 1147, ../sass/partials/_modules.scss */
+.xzh-notification-ctn .xzh-notification-content .xzh-notification-title {
+  font-size: 1.1em;
+}
+/* line 1150, ../sass/partials/_modules.scss */
+.xzh-notification-ctn .xzh-notification-content .xzh-notification-detail {
+  color: #b9b9b9;
+  margin-top: 1em;
+}
+/* line 1155, ../sass/partials/_modules.scss */
+.xzh-notification-ctn .xzh-notification-time {
+  float: right;
+  color: #b9b9b9;
+  font-size: .8em;
+}
+
+/* line 1162, ../sass/partials/_modules.scss */
+.xzh-feedback-ctn {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 1165, ../sass/partials/_modules.scss */
+.xzh-feedback-ctn .xzh-feedback-tip {
+  margin-top: 1em;
+  color: #b9b9b9;
+  text-indent: 1em;
+}
+/* line 1170, ../sass/partials/_modules.scss */
+.xzh-feedback-ctn .xzh-feedback-form-wrap {
+  padding: 1em;
+}
+/* line 1173, ../sass/partials/_modules.scss */
+.xzh-feedback-ctn .xzh-feedback-form {
+  position: relative;
+}
+/* line 1175, ../sass/partials/_modules.scss */
+.xzh-feedback-ctn .xzh-feedback-form legend {
+  display: none;
+}
+/* line 1179, ../sass/partials/_modules.scss */
+.xzh-feedback-ctn .xzh-feedback-border {
+  border: 1px solid #b9b9b9;
+}
+/* line 1181, ../sass/partials/_modules.scss */
+.xzh-feedback-ctn .xzh-feedback-border textarea {
+  width: 100%;
+  border: 0;
+}
+/* line 1186, ../sass/partials/_modules.scss */
+.xzh-feedback-ctn .xzh-feedback-submit {
+  border: none;
+}
+
+/* line 1193, ../sass/partials/_modules.scss */
+.xzh-personal-information-ctn .xzh-personal-information-top {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: #b9b9b9;
+}
+/* line 1198, ../sass/partials/_modules.scss */
+.xzh-personal-information-ctn .xzh-personal-information-grid {
+  background-color: #fff;
+  padding-left: .5em;
+  border-bottom: 1px solid #b9b9b9;
+}
+/* line 1206, ../sass/partials/_modules.scss */
+.xzh-personal-information-ctn .xzh-personal-information-grid-left {
+  float: left;
+  height: 3.8em;
+  line-height: 3.8em;
+}
+/* line 1211, ../sass/partials/_modules.scss */
+.xzh-personal-information-ctn .xzh-personal-information-grid-right {
+  float: right;
+  height: 3.8em;
+  line-height: 3.8em;
+}
+/* line 1215, ../sass/partials/_modules.scss */
+.xzh-personal-information-ctn .xzh-personal-information-grid-right img {
+  width: 3em;
+  vertical-align: middle;
+}
+
+/* line 1221, ../sass/partials/_modules.scss */
+.xzh-personal-information-camera, .xzh-personal-information-local {
+  text-align: center;
+  font-size: 1.2em;
+  color: #39bd8c;
+}
+
+/* line 1226, ../sass/partials/_modules.scss */
+.xzh-personal-information-local {
+  padding-top: 1em;
+}
+
+/* line 1230, ../sass/partials/_modules.scss */
+.xzh-personal-information-input {
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  border: 1px solid #39bd8c;
+  border-radius: 30px;
+  text-indent: 1em;
+}
+/* line 1237, ../sass/partials/_modules.scss */
+.xzh-personal-information-input input {
+  width: 10em;
+  border: 0;
+}
+
+/* line 1242, ../sass/partials/_modules.scss */
+.xzh-personal-information-confirm {
+  width: 100%;
+  height: 2.6em;
+  line-height: 2.6em;
+  background-color: #f86227;
+  text-align: center;
+  margin-top: 1em;
+  color: #fff;
+  border-radius: 30px;
+}
+
+/* line 1253, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn {
+  background-color: #b9b9b9;
+}
+/* line 1255, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-menue-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+}
+/* line 1261, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-menue-grid {
+  width: 19%;
+  height: 2.5em;
+  line-height: 2.5em;
+  text-align: center;
+  color: #b9b9b9;
+  background-color: #fff;
+}
+/* line 1269, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-menue-grid-active {
+  box-shadow: inset 0 -0.2em 0px #f86227;
+}
+/* line 1272, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-type-ctn {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 1276, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-grid {
+  background-color: #fff;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 1em;
+  padding: .5em;
+}
+/* line 1291, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-grid-img {
+  float: left;
+}
+/* line 1293, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-grid-img img {
+  width: 6em;
+}
+/* line 1297, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-grid-detail {
+  float: right;
+  width: 70%;
+}
+/* line 1304, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-grid-detail-left {
+  width: 65%;
+  float: left;
+}
+/* line 1308, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-grid-detail-tag {
+  color: #b9b9b9;
+  font-size: .8em;
+}
+/* line 1312, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-grid-detail-right {
+  float: right;
+  text-align: right;
+  width: 34%;
+}
+/* line 1316, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-grid-detail-right .xzh-personal-orders-grid-detail-nums {
+  margin-top: 1em;
+  color: #b9b9b9;
+}
+/* line 1326, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-grid-state {
+  float: left;
+  color: #f86227;
+}
+/* line 1330, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-grid-detail-total-price {
+  float: right;
+}
+/* line 1333, ../sass/partials/_modules.scss */
+.xzh-personal-orders-ctn .xzh-personal-orders-grid-bottom {
+  margin-top: .5em;
+  text-align: right;
 }

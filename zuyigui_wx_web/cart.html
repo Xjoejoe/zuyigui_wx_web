@@ -11,12 +11,12 @@
 		<div class="xzh-top-title">
 			<span class="xzh-back-history"><img src="images/cart_back.png" alt="返回"></span>
 			<span class="xzh-top-title-txt">
-				购物车(<span class="xzh-cart-num">5</span>)
+				购物车(<span class="xzh-cart-num">0</span>)
 			</span>
 			<span class="xzh-cart-editor">编辑&nbsp;&nbsp;</span>
 		</div>
 		<div class="xzh-inner-container">
-			<div class="xzh-cart-grid">
+			<div class="xzh-cart-grid" data-check='0'>
 				<div class="xzh-cart-grid-check">
 					<img src="images/cart_unchecked.png" alt="check">
 				</div>
@@ -38,7 +38,7 @@
 					X <span class="xzh-cart-grid-num">1</span>
 				</div>
 			</div>
-			<div class="xzh-cart-grid">
+			<div class="xzh-cart-grid" data-check='0'>
 				<div class="xzh-cart-grid-check">
 					<img src="images/cart_unchecked.png" alt="check">
 				</div>
@@ -60,7 +60,7 @@
 					X <span class="xzh-cart-grid-num">1</span>
 				</div>
 			</div>
-			<div class="xzh-cart-grid">
+			<div class="xzh-cart-grid" data-check='0'>
 				<div class="xzh-cart-grid-check">
 					<img src="images/cart_unchecked.png" alt="check">
 				</div>
@@ -82,7 +82,7 @@
 					X <span class="xzh-cart-grid-num">1</span>
 				</div>
 			</div>
-			<div class="xzh-cart-grid">
+			<div class="xzh-cart-grid" data-check='0'>
 				<div class="xzh-cart-grid-check">
 					<img src="images/cart_unchecked.png" alt="check">
 				</div>
@@ -104,7 +104,7 @@
 					X <span class="xzh-cart-grid-num">1</span>
 				</div>
 			</div>
-			<div class="xzh-cart-grid">
+			<div class="xzh-cart-grid" data-check='0'>
 				<div class="xzh-cart-grid-check">
 					<img src="images/cart_unchecked.png" alt="check">
 				</div>
@@ -126,7 +126,7 @@
 					X <span class="xzh-cart-grid-num">1</span>
 				</div>
 			</div>
-			<div class="xzh-cart-grid">
+			<div class="xzh-cart-grid" data-check='0'>
 				<div class="xzh-cart-grid-check">
 					<img src="images/cart_unchecked.png" alt="check">
 				</div>
@@ -145,12 +145,12 @@
 					</div>
 				</div>
 				<div class="xzh-cart-grid-num-ctn">
-					X <span class="xzh-cart-grid-num">1</span>
+					X <span class="xzh-cart-grid-num">3</span>
 				</div>
 			</div>
 		</div>
 		<div class="xzh-cart-pay-menue">
-			<div class="xzh-cart-pay-menue-all-check">
+			<div class="xzh-cart-pay-menue-all-check" data-check='0'>
 				<img src="images/cart_unchecked.png" alt="">
 				全选
 			</div>
@@ -166,9 +166,91 @@
 	<script src="js/jquery-1.8.3.min.js"></script>
 	<script>
 		$(function(){
-			$('.xzh-cart-editor').click(function(){
-				$('.xzh-cart-grid-check').show();
-			});
+			var cartEditorFlag = 0;
+			var goodsNUm = 0;
+			var totalPrice = 0;
+			cartEditor();
+			cartCheck();
+			checkAll();
+			function cartEditor(){
+				$('.xzh-cart-editor').click(function(){
+					if(cartEditorFlag == 0){
+						$('.xzh-cart-grid-check').show();
+						cartEditorFlag = 1;
+					}else{
+						$('.xzh-cart-grid-check').hide();
+						cartEditorFlag = 0;
+						unCheck();
+					}
+					
+				});
+			}
+			function cartCheck(){
+				$('.xzh-cart-grid').click(function(){
+					if(cartEditorFlag == 0) {console.log('s');return;}
+					var flag = $(this).attr('data-check');
+					var num = parseInt($(this).find('.xzh-cart-grid-num').html());
+					var price = parseFloat($(this).find('.xzh-cart-grid-detail-price-num').html());
+					if(flag == '0'){
+						$(this).find('.xzh-cart-grid-check').children('img').attr('src','images/cart_checked.png');
+						$(this).attr('data-check','1');
+						cartGoodsNum(num);
+						cartPrice(num,price);
+						console.log('a');
+					}else{
+						$(this).find('.xzh-cart-grid-check').children('img').attr('src','images/cart_unchecked.png');
+						$(this).attr('data-check','0');
+						cartGoodsNum(-num);
+						cartPrice(-num,price);
+						console.log('b');
+					}	
+				});
+			}
+			function cartGoodsNum(num){
+				goodsNUm+=num;
+				$('.xzh-cart-num').html(goodsNUm);
+				$('.xzh-cart-pay-nums').html(goodsNUm);
+			}
+			function cartPrice(num,price){
+				var temp = parseFloat(num*price);
+				totalPrice+=temp;
+				$('.xzh-cart-pay-menue-total-price-num').html(totalPrice.toFixed(2));
+			}
+			function checkAll(){
+				$('.xzh-cart-pay-menue-all-check').click(function(){
+					if($(this).attr('data-check')=='0'){
+						$('.xzh-cart-grid-check').show();
+						$('.xzh-cart-pay-menue-all-check').find('img').attr('src','images/cart_checked.png');
+						cartEditorFlag = 1;
+						$('.xzh-cart-grid').each(function(){
+							$(this).find('.xzh-cart-grid-check').children('img').attr('src','images/cart_checked.png');
+							$(this).attr('data-check','1');
+							var num = parseInt($(this).find('.xzh-cart-grid-num').html());
+							var price = parseFloat($(this).find('.xzh-cart-grid-detail-price-num').html());
+							cartGoodsNum(num);
+							cartPrice(num,price);
+						});
+						$(this).attr('data-check','1');
+					}else{
+						unCheck();
+					}
+					
+				});
+			}
+			function unCheck(){
+				goodsNUm = 0;
+				totalPrice = 0;
+				$('.xzh-cart-grid').each(function(){
+					$(this).find('.xzh-cart-grid-check').children('img').attr('src','images/cart_unchecked.png');
+					$(this).attr('data-check','0');
+
+				});
+				$('.xzh-cart-pay-menue-all-check').find('img').attr('src','images/cart_unchecked.png');
+				$('.xzh-cart-num').html(goodsNUm);
+				$('.xzh-cart-pay-nums').html(goodsNUm);
+				$('.xzh-cart-pay-menue-total-price-num').html(totalPrice.toFixed(2));
+				$('.xzh-cart-pay-menue-all-check').attr('data-check','0');
+			}
 		});
 	</script>
 </body>

@@ -18,11 +18,11 @@
 						<legend>登录表单</legend>
 						<div class="xzh-log-phone">
 							<div class="xzh-log-input-icon xzh-log-input-icon-phone"></div>
-							<input type="text" name="phone_num" placeholder="请输入手机号">
+							<input type="text" name="username" placeholder="请输入用户名" id="username">
 						</div>
 						<div class="xzh-log-password">
 							<div class="xzh-log-input-icon xzh-log-input-icon-pwd"></div>
-							<input type="text" name="password" placeholder="请输入密码">
+							<input type="text" name="password" placeholder="请输入密码" id="password">
 						</div>
 						<div class="xzh-log-btn">登录</div>
 						<div class="xzh-log-forget-pwd">
@@ -50,5 +50,28 @@
 			</div>
 		</div>
 	</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script>
+		$('.xzh-log-btn').click(function(){
+			$.ajax({
+	             type: "GET",
+	             url: "http://zyg.cdn.51946.net/api.php",
+	             data: {username:$("#username").val(), password:$("#password").val()},
+	             dataType: "json",
+	             success: function(data){
+	                 console.log(data)   
+	             }
+	         });
+		});
+        /*$.ajax({
+	         url: "http://zyg.cdn.51946.net/api.php?a=login&username=admin&password=admin",
+	         type: "GET",
+	         dataType: "jsonp", //指定服务器返回的数据类型
+	         success: function (data) {
+	            var result = JSON.stringify(data); //json对象转成字符串
+	            console.log(result);
+	         }
+	     });*/
+	</script>
 </body>
 </html>
