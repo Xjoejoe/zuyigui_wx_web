@@ -305,7 +305,7 @@
 		$(document).ready(function(){
 			var mySwiper = new Swiper('.xzh-personal-orders-type-ctn',{
 				on:{
-					touchStart: function(event){
+					slideChangeTransitionStart: function(event){
 				      var index = this.activeIndex;
 				      $('.xzh-personal-orders-menue-grid:eq('+index+')')
 				      .addClass('xzh-personal-orders-menue-grid-active')

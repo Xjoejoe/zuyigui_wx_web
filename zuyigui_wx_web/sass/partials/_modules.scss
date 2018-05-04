@@ -1336,3 +1336,79 @@
 	}
 
 }
+
+.xzh-goods-detail-ctn{
+	.xzh-goods-detail-banner{
+		img{
+			width:100%;
+		}
+	}
+}
+
+.xzh-goods-type-ctn{
+	background-color: lighten($color3,20%);
+	.xzh-top-title{
+		position:fixed;
+		z-index:999;
+	}
+	.xzh-goods-type-content{
+		position:relative;
+		padding-top:4.7em;
+		&:after{
+			@extend %clear;
+		}
+	}
+	.xzh-goods-type-content-left{
+		position:fixed;
+		background-color: $color2;
+		width:25%;
+		padding-bottom:5em;
+	}
+	.xzh-goods-type-content-left-li{
+		width:100%;
+		height:3em;
+		line-height:3em;
+		text-align:center;
+	}
+	.xzh-goods-type-content-right{
+		width:72%;
+		float:right;
+		padding-bottom:1em;
+		&:after{
+			@extend %clear;
+		}
+	}
+	.xzh-goods-type-grid{
+		width:48%;
+		margin-top:.3em;
+		margin-right:.3em;
+		background-color: $color2;
+		float:left;
+	}
+	.xzh-goods-type-grid-img{
+		img{
+			width:100%;
+		}
+	}
+	.xzh-goods-type-grid-title{
+		font-size:.8em;
+		padding:.3em;
+		color:$color3;
+	}
+	.xzh-goods-type-grid-price{
+		padding:.3em;
+		&:after{
+			@extend %clear;
+		}
+	}
+	.xzh-goods-type-grid-price-left{
+		float:left;
+		img{
+			width:1em;
+		}
+	}
+	.xzh-goods-type-grid-price-right{
+		float:right;
+		color:$color7;
+	}
+}
