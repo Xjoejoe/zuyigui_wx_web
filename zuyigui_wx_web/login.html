@@ -13,9 +13,10 @@
 				<img src="images/logo.png" alt="">
 			</div>
 			<div class="xzh-log-form-ctn">
-				<form action="#">
+				<form action="#" id="login_form" method="post">
 					<fieldset>
 						<legend>登录表单</legend>
+						<input type="text" name="a" value="login" style="display:none"/>
 						<div class="xzh-log-phone">
 							<div class="xzh-log-input-icon xzh-log-input-icon-phone"></div>
 							<input type="text" name="username" placeholder="请输入用户名" id="username">
@@ -50,18 +51,45 @@
 			</div>
 		</div>
 	</div>
+	<div id="target"></div>
 	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.form.js"></script>
 	<script>
 		$('.xzh-log-btn').click(function(){
-			$.ajax({
+			/*$.ajax({
 	             type: "GET",
 	             url: "http://zyg.cdn.51946.net/api.php",
-	             data: {username:$("#username").val(), password:$("#password").val()},
-	             dataType: "json",
+	             data: {a:"login",username:$("#username").val(), password:$("#password").val()},
+	             dataType: "jsonp",
 	             success: function(data){
 	                 console.log(data)   
 	             }
-	         });
+	         });*/
+	         console.log('ss');
+		        var options = {
+		        	target:"#target",   
+					success:function(data){
+						console.log(data);
+					},
+			        // other available options:   
+			        url:"http://zyg.cdn.51946.net/api.php",       // override for form's 'action' attribute   
+			        //type:      type        // 'get' or 'post', override for form's 'method' attribute   
+			        dataType:  'json'        // 'xml', 'script', or 'json' (expected server response type)   
+			        //clearForm: true        // clear all form fields after successful submit   
+			        //resetForm: true        // reset the form after successful submit   
+			   
+			        // $.ajax options can be used here too, for example:   
+			        //timeout:   3000   
+			    };   
+				 $('#login_form').submit(function() {   
+			        // inside event callbacks 'this' is the DOM element so we first   
+			        // wrap it in a jQuery object and then invoke ajaxSubmit   
+			        $(this).ajaxSubmit(options);   
+			   
+			        // !!! Important !!!   
+			        // always return false to prevent standard browser submit and page navigation   
+			        return false;   
+			    });   
 		});
         /*$.ajax({
 	         url: "http://zyg.cdn.51946.net/api.php?a=login&username=admin&password=admin",

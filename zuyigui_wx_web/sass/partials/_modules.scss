@@ -1412,3 +1412,46 @@
 		color:$color7;
 	}
 }
+
+.xzh-mall-product-list-ctn{
+	.xzh-mall-product-list{
+		padding:.8em;
+	}
+	.xzh-mall-product-grid{
+		width:48%;
+		margin-top:1em;
+		box-shadow:1px 1px 2px 2px lighten($color3,20%);
+		color:$color5;
+	}
+	.xzh-mall-product-grid:nth-child(odd){
+		float:left;
+	}
+	.xzh-mall-product-grid:nth-child(even){
+		float:right;
+	}
+	.xzh-mall-product-img{
+		img{
+			width:100%;
+		}
+	}
+	.xzh-mall-product-title{
+		text-align:center;
+	}
+	.xzh-mall-product-price{
+		padding:.3em;
+		&::after{
+			@extend %clear;
+		}
+	}
+	.xzh-mall-product-price-cart{
+		float:left;
+		img{
+			width:1.5em;
+		}
+	}
+	.xzh-mall-product-price-num{
+		float:right;
+		color:$color7;
+		font-size:1.1em;
+	}
+}

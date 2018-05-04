@@ -111,12 +111,13 @@
 					</span>
 					<a href="#" class="xzh-mall-recommend-title-link">更多></a>
 				</div>
-				<a href="http://zyg.cdn.51946.net/api.php?a=goodsdetail&id=1&token=7a731U6kmQBbC0ChRfb7D\/z6oMWVl2EtwCLbjTkULT4AXKokhKdqSd4" class="xzh-mall-recommend-grid">
+				<!-- tpl模板样式 -->
+				<!-- <a href="#" class="xzh-mall-recommend-grid">
 					<div class="xzh-mall-goods-img">
 						<img src="images/mall_goods.png" alt="">
 					</div>
 					<div class="xzh-mall-goods-title">
-						商品信息商品信息
+						商品信息商品信息1
 					</div>
 					<div class="xzh-mall-goods-price">
 						<div class="xzh-mall-goods-price-cart">
@@ -126,55 +127,8 @@
 							￥<span class="xzh-mall-goods-price-number">29.8元</span>
 						</div>
 					</div>
-				</a>
-				<a href="http://zyg.cdn.51946.net/api.php?a=goodsdetail&id=1&token=7a731U6kmQBbC0ChRfb7D\/z6oMWVl2EtwCLbjTkULT4AXKokhKdqSd4" class="xzh-mall-recommend-grid">
-					<div class="xzh-mall-goods-img">
-						<img src="images/mall_goods.png" alt="">
-					</div>
-					<div class="xzh-mall-goods-title">
-						商品信息商品信息
-					</div>
-					<div class="xzh-mall-goods-price">
-						<div class="xzh-mall-goods-price-cart">
-							<img src="images/mall_red_cart.png" alt="">
-						</div>
-						<div class="xzh-mall-goods-price-num">
-							￥<span class="xzh-mall-goods-price-number">29.8元</span>
-						</div>
-					</div>
-				</a>
-				<a href="http://zyg.cdn.51946.net/api.php?a=goodsdetail&id=1&token=7a731U6kmQBbC0ChRfb7D\/z6oMWVl2EtwCLbjTkULT4AXKokhKdqSd4" class="xzh-mall-recommend-grid">
-					<div class="xzh-mall-goods-img">
-						<img src="images/mall_goods.png" alt="">
-					</div>
-					<div class="xzh-mall-goods-title">
-						商品信息商品信息
-					</div>
-					<div class="xzh-mall-goods-price">
-						<div class="xzh-mall-goods-price-cart">
-							<img src="images/mall_red_cart.png" alt="">
-						</div>
-						<div class="xzh-mall-goods-price-num">
-							￥<span class="xzh-mall-goods-price-number">29.8元</span>
-						</div>
-					</div>
-				</a>
-				<a href="http://zyg.cdn.51946.net/api.php?a=goodsdetail&id=1&token=7a731U6kmQBbC0ChRfb7D\/z6oMWVl2EtwCLbjTkULT4AXKokhKdqSd4" class="xzh-mall-recommend-grid">
-					<div class="xzh-mall-goods-img">
-						<img src="images/mall_goods.png" alt="">
-					</div>
-					<div class="xzh-mall-goods-title">
-						商品信息商品信息
-					</div>
-					<div class="xzh-mall-goods-price">
-						<div class="xzh-mall-goods-price-cart">
-							<img src="images/mall_red_cart.png" alt="">
-						</div>
-						<div class="xzh-mall-goods-price-num">
-							￥<span class="xzh-mall-goods-price-number">29.8元</span>
-						</div>
-					</div>
-				</a>
+				</a> -->
+				<!-- //tpl模板样式 -->
 			</div>
 		</div>
 	</div>
@@ -208,6 +162,7 @@
 	</div>
 	<script src="js/jquery-1.8.3.min.js"></script>
 	<script src="js/swiper.min.js"></script>
+	<script src="js/data.js"></script>
 	<script>
 		$(function(){
 			var mySwiper = new Swiper ('.xzh-mall-banner', {
@@ -216,7 +171,28 @@
 				pagination: {
 			      el: '.swiper-pagination',
 			    }
-			});        
+			});
+			;(function(){
+				var grid_tpl = [
+									'<a href="#" class="xzh-mall-recommend-grid">',
+										'<div class="xzh-mall-goods-img">',
+											'<img src="images/mall_goods.png" alt="">',
+										'</div>',
+										'<div class="xzh-mall-goods-title">',
+											'商品信息商品信息1',
+										'</div>',
+										'<div class="xzh-mall-goods-price">',
+											'<div class="xzh-mall-goods-price-cart">',
+												'<img src="images/mall_red_cart.png" alt="">',
+											'</div>',
+											'<div class="xzh-mall-goods-price-num">',
+												'￥<span class="xzh-mall-goods-price-number">29.8元</span>',
+											'</div>',
+										'</div>',
+									'</a>'
+								].join("");
+				var data = 
+			})();        
 		});
 	</script>
 </body>

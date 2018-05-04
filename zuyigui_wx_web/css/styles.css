@@ -505,7 +505,7 @@ a:focus, *:focus {
 }
 
 /* line 22, ../sass/partials/_inputstyle.scss */
-.xzh-footer-menue::after, .xzh-my-cabinet .xzh-cabinet-grid .xzh-cabinet-grid-price-ctn::after, .xzh-used-time-container .xzh-used-time-bed-box::after, .xzh-used-time-container .xzh-used-time-bed-box-right::after, .xzh-cart-container .xzh-cart-grid::after, .xzh-personal-container .xzh-personal-menue-top::after, .xzh-personal-container .xzh-personal-menue-middle::after, .xzh-personal-container .xzh-personal-menue-middle-top::after, .xzh-personal-container .xzh-personal-menue-bottom-grid::after, .xzh-mall-container .xzh-top-title::after, .xzh-mall-container .xzh-mall-menue-ctn::after, .xzh-mall-container .xzh-mall-goods-price::after, .xzh-menue-cabinet .xzh-menue-cabinet-add:after, .xzh-menue-cabinet .xzh-menue-cabinet-weather-degree:after, .xzh-menue-cabinet .xzh-menue-cabinet-weather-detail:after, .xzh-menue-cabinet .xzh-menue-cabinet-equipment:after, .xzh-delivery-address-ctn .xzh-delivery-address-grid:after, .xzh-delivery-address-ctn .xzh-delivery-address-detail:after, .xzh-delivery-address-ctn .xzh-delivery-address-editor:after, .xzh-notification-ctn .xzh-notification-grid:after, .xzh-personal-information-ctn .xzh-personal-information-grid:after, .xzh-personal-orders-ctn .xzh-personal-orders-grid:after, .xzh-personal-orders-ctn .xzh-personal-orders-grid-top:after, .xzh-personal-orders-ctn .xzh-personal-orders-grid-detail:after, .xzh-personal-orders-ctn .xzh-personal-orders-grid-middle:after, .xzh-goods-type-ctn .xzh-goods-type-content:after, .xzh-goods-type-ctn .xzh-goods-type-content-right:after, .xzh-goods-type-ctn .xzh-goods-type-grid-price:after {
+.xzh-footer-menue::after, .xzh-my-cabinet .xzh-cabinet-grid .xzh-cabinet-grid-price-ctn::after, .xzh-used-time-container .xzh-used-time-bed-box::after, .xzh-used-time-container .xzh-used-time-bed-box-right::after, .xzh-cart-container .xzh-cart-grid::after, .xzh-personal-container .xzh-personal-menue-top::after, .xzh-personal-container .xzh-personal-menue-middle::after, .xzh-personal-container .xzh-personal-menue-middle-top::after, .xzh-personal-container .xzh-personal-menue-bottom-grid::after, .xzh-mall-container .xzh-top-title::after, .xzh-mall-container .xzh-mall-menue-ctn::after, .xzh-mall-container .xzh-mall-goods-price::after, .xzh-menue-cabinet .xzh-menue-cabinet-add:after, .xzh-menue-cabinet .xzh-menue-cabinet-weather-degree:after, .xzh-menue-cabinet .xzh-menue-cabinet-weather-detail:after, .xzh-menue-cabinet .xzh-menue-cabinet-equipment:after, .xzh-delivery-address-ctn .xzh-delivery-address-grid:after, .xzh-delivery-address-ctn .xzh-delivery-address-detail:after, .xzh-delivery-address-ctn .xzh-delivery-address-editor:after, .xzh-notification-ctn .xzh-notification-grid:after, .xzh-personal-information-ctn .xzh-personal-information-grid:after, .xzh-personal-orders-ctn .xzh-personal-orders-grid:after, .xzh-personal-orders-ctn .xzh-personal-orders-grid-top:after, .xzh-personal-orders-ctn .xzh-personal-orders-grid-detail:after, .xzh-personal-orders-ctn .xzh-personal-orders-grid-middle:after, .xzh-goods-type-ctn .xzh-goods-type-content:after, .xzh-goods-type-ctn .xzh-goods-type-content-right:after, .xzh-goods-type-ctn .xzh-goods-type-grid-price:after, .xzh-mall-product-list-ctn .xzh-mall-product-price::after {
   content: "";
   display: table;
   clear: both;
@@ -2025,4 +2025,50 @@ a:focus, *:focus {
 .xzh-goods-type-ctn .xzh-goods-type-grid-price-right {
   float: right;
   color: #fa0029;
+}
+
+/* line 1417, ../sass/partials/_modules.scss */
+.xzh-mall-product-list-ctn .xzh-mall-product-list {
+  padding: .8em;
+}
+/* line 1420, ../sass/partials/_modules.scss */
+.xzh-mall-product-list-ctn .xzh-mall-product-grid {
+  width: 48%;
+  margin-top: 1em;
+  box-shadow: 1px 1px 2px 2px #ececec;
+  color: #000;
+}
+/* line 1426, ../sass/partials/_modules.scss */
+.xzh-mall-product-list-ctn .xzh-mall-product-grid:nth-child(odd) {
+  float: left;
+}
+/* line 1429, ../sass/partials/_modules.scss */
+.xzh-mall-product-list-ctn .xzh-mall-product-grid:nth-child(even) {
+  float: right;
+}
+/* line 1433, ../sass/partials/_modules.scss */
+.xzh-mall-product-list-ctn .xzh-mall-product-img img {
+  width: 100%;
+}
+/* line 1437, ../sass/partials/_modules.scss */
+.xzh-mall-product-list-ctn .xzh-mall-product-title {
+  text-align: center;
+}
+/* line 1440, ../sass/partials/_modules.scss */
+.xzh-mall-product-list-ctn .xzh-mall-product-price {
+  padding: .3em;
+}
+/* line 1446, ../sass/partials/_modules.scss */
+.xzh-mall-product-list-ctn .xzh-mall-product-price-cart {
+  float: left;
+}
+/* line 1448, ../sass/partials/_modules.scss */
+.xzh-mall-product-list-ctn .xzh-mall-product-price-cart img {
+  width: 1.5em;
+}
+/* line 1452, ../sass/partials/_modules.scss */
+.xzh-mall-product-list-ctn .xzh-mall-product-price-num {
+  float: right;
+  color: #fa0029;
+  font-size: 1.1em;
 }
