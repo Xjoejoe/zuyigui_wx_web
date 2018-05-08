@@ -31,71 +31,68 @@
 					</div>
 				</div>
 			</a>
-			<a href="#" class="xzh-mall-product-grid">
-				<div class="xzh-mall-product-img">
-					<img src="images/mall_goods.png" alt="">
-				</div>
-				<div class="xzh-mall-product-title">
-					商品信息商品信息
-				</div>
-				<div class="xzh-mall-product-price">
-					<div class="xzh-mall-product-price-cart">
-						<img src="images/mall_red_cart.png" alt="">
-					</div>
-					<div class="xzh-mall-product-price-num">
-						￥<span class="xzh-mall-product-price-number">29.8元</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" class="xzh-mall-product-grid">
-				<div class="xzh-mall-product-img">
-					<img src="images/mall_goods.png" alt="">
-				</div>
-				<div class="xzh-mall-product-title">
-					商品信息商品信息
-				</div>
-				<div class="xzh-mall-product-price">
-					<div class="xzh-mall-product-price-cart">
-						<img src="images/mall_red_cart.png" alt="">
-					</div>
-					<div class="xzh-mall-product-price-num">
-						￥<span class="xzh-mall-product-price-number">29.8元</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" class="xzh-mall-product-grid">
-				<div class="xzh-mall-product-img">
-					<img src="images/mall_goods.png" alt="">
-				</div>
-				<div class="xzh-mall-product-title">
-					商品信息商品信息
-				</div>
-				<div class="xzh-mall-product-price">
-					<div class="xzh-mall-product-price-cart">
-						<img src="images/mall_red_cart.png" alt="">
-					</div>
-					<div class="xzh-mall-product-price-num">
-						￥<span class="xzh-mall-product-price-number">29.8元</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" class="xzh-mall-product-grid">
-				<div class="xzh-mall-product-img">
-					<img src="images/mall_goods.png" alt="">
-				</div>
-				<div class="xzh-mall-product-title">
-					商品信息商品信息
-				</div>
-				<div class="xzh-mall-product-price">
-					<div class="xzh-mall-product-price-cart">
-						<img src="images/mall_red_cart.png" alt="">
-					</div>
-					<div class="xzh-mall-product-price-num">
-						￥<span class="xzh-mall-product-price-number">29.8元</span>
-					</div>
-				</div>
-			</a>
 		</div>
 	</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jq.getUrl.js"></script>
+	<script>
+		var category_id = $.Request('id');
+		$(document).ready(function(){
+			var mall_product_grid = [
+										'<a href="#" class="xzh-mall-product-grid">',
+											'<div class="xzh-mall-product-img">',
+												'<img src="{#thumb#}" alt="">',
+											'</div>',
+											'<div class="xzh-mall-product-title">',
+												'{#description#}',
+											'</div>',
+											'<div class="xzh-mall-product-price">',
+												'<div class="xzh-mall-product-price-cart" data-product-id={#id#}>',
+													'<img src="images/mall_red_cart.png" alt="">',
+												'</div>',
+												'<div class="xzh-mall-product-price-num">',
+													'￥<span class="xzh-mall-product-price-number">{#marketprice#}元</span>',
+												'</div>',
+											'</div>',
+										'</a>'
+									].join("");
+			
+			$.ajax({
+				'url':"http://zyg.cdn.51946.net/api.php",
+				'type':'post',
+				'data':{'a':'login','username':'admin','password':"admin"},
+				'dataType':'json',
+				'success':function(res){
+					$.ajax({
+							'url':"http://zyg.cdn.51946.net/api.php",
+							'type':'post',
+							'data':{'a':'goodslist','token':res['data']['token'],"pcate":category_id},
+							'dataType':'json',
+							'success':function(data){
+								console.log(data);
+								if(!data['data']){
+									console.log('no content');
+									return;
+								}
+								var mall_product_list = formateString(mall_product_grid,data['data']);
+								$(mall_product_list).appendTo('.xzh-mall-product-list');
+								$('.xzh-mall-product-price-cart').click(function(){
+									var add_cart_id = $(this).attr('data-product-id');
+									$.ajax({
+										'url':"http://zyg.cdn.51946.net/api.php",
+										'type':'post',
+										'data':{'a':'cart','token':res['data']['token'],'op':"add","id":add_cart_id,'total':1},
+										'dataType':'json',
+										'success':function(data){
+											console.log(data);
+										}
+									});
+								});
+							}
+					})
+				}
+			});
+		});
+	</script>
 </body>
 </html>

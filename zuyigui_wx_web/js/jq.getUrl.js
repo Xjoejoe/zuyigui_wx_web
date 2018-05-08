@@ -26,3 +26,17 @@
     
     });
    })(jQuery);
+   function formateString(str,data){
+    var html = "";
+    if(data instanceof Array){
+        for(var i = 0 ;i<data.length;i++){
+            html += arguments.callee(str,data[i]);
+        }
+        return html;
+    }else{
+        //{#content#}
+        return str.replace(/\{#(\w+)#\}/g,function(match,key){
+            return typeof data === 'string' ? data:(data[key] != undefined ? data[key] : "");
+        })
+    }
+}
