@@ -4,25 +4,73 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
 	<title>商品详情</title>
 </head>
 <body>
 	<div class="xzh-goods-detail-ctn">
 		<div class="xzh-goods-detail-banner">
-			<img src="images/mall_goods.png" alt="">
+				<div class="swiper-wrapper">
+					<!-- <div class="swiper-slide">Slide 1</div> -->
+				</div>
 		</div>
 		<div class="xzh-goods-detail-content">
-			<p>商品详情</p>
-			<p>商品详情</p>
-			<p>商品详情</p>
-			<p>商品详情</p>
-			<p>商品详情</p>
-			<p>商品详情</p>
-			<p>商品详情</p>
-			<p>商品详情</p>
-			<p>商品详情</p>
-			<p>商品详情</p>
+			<!-- <p>{#title#}</p>
+			<p>{#description#}</p> -->
 		</div>
 	</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/jq.getUrl.js"></script>
+	<script>
+		$(document).ready(function(){
+			var product_id = $.Request('id');
+			var banner_tpl = '<div class="swiper-slide"><img src="{#attachment#}"></div>';
+			var content_tpl = ['<p>{#title#}</p>','<p>{#title#}</p>'].join("");
+			$.ajax({
+					'url':"http://zyg.cdn.51946.net/api.php",
+					'type':'post',
+					'data':{'a':'login','username':'admin','password':"admin"},
+					'dataType':'json',
+					'success':function(res){
+							console.log(res);
+							$.ajax({
+								'url':"http://zyg.cdn.51946.net/api.php",
+								'type':'post',
+								'data':{'a':'goodsdetail','id':product_id,'token':res['data']['token']},
+								'dataType':'json',
+								'success':function(data){
+									console.log(data);
+									var banner_content = formateString(banner_tpl,data['data']['piclist']);
+									$(banner_content).appendTo('.swiper-wrapper');
+									var banner_swiper = new Swiper('.xzh-goods-detail-banner');
+									var goods_detail_content = formateString(content_tpl,data['data']['info']);
+									$(goods_detail_content).appendTo('.xzh-goods-detail-content');
+								},
+								'error':function(XMLHttpRequest, textStatus, errorThrown){
+									console.log(XMLHttpRequest, textStatus, errorThrown);
+								}
+							});
+						},
+					'error':function(XMLHttpRequest, textStatus, errorThrown){
+								console.log(XMLHttpRequest, textStatus, errorThrown);
+							}
+					})
+		});
+		function formateString(str,data){
+				var html = "";
+				if(data instanceof Array){
+					for(var i = 0 ;i<data.length;i++){
+						html += arguments.callee(str,data[i]);
+					}
+					return html;
+				}else{
+					//{#content#}
+					return str.replace(/\{#(\w+)#\}/g,function(match,key){
+						return typeof data === 'string' ? data:(data[key] != undefined ? data[key] : "");
+					})
+				}
+		}  
+	</script>
 </body>
 </html>

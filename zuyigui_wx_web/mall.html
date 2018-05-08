@@ -39,66 +39,12 @@
 		</div>
 		<div class="xzh-inner-container">
 			<div class="xzh-mall-menue-ctn">
-				<a class="xzh-mall-menue-grid">
+				<!-- <a href="#" class="xzh-mall-menue-grid">
 					<p class="xzh-mall-menue-grid-img">
 						<img src="images/maii_menue_btn1.png" alt="">
 					</p>
 					<p class="xzh-mall-menue-grid-txt">洗化用品</p>
-				</a>
-				<a class="xzh-mall-menue-grid">
-					<p class="xzh-mall-menue-grid-img">
-						<img src="images/maii_menue_btn1.png" alt="">
-					</p>
-					<p class="xzh-mall-menue-grid-txt">洗化用品</p>
-				</a>
-				<a class="xzh-mall-menue-grid">
-					<p class="xzh-mall-menue-grid-img">
-						<img src="images/maii_menue_btn1.png" alt="">
-					</p>
-					<p class="xzh-mall-menue-grid-txt">洗化用品</p>
-				</a>
-				<a class="xzh-mall-menue-grid">
-					<p class="xzh-mall-menue-grid-img">
-						<img src="images/maii_menue_btn1.png" alt="">
-					</p>
-					<p class="xzh-mall-menue-grid-txt">洗化用品</p>
-				</a>
-				<a class="xzh-mall-menue-grid">
-					<p class="xzh-mall-menue-grid-img">
-						<img src="images/maii_menue_btn1.png" alt="">
-					</p>
-					<p class="xzh-mall-menue-grid-txt">洗化用品</p>
-				</a>
-				<a class="xzh-mall-menue-grid">
-					<p class="xzh-mall-menue-grid-img">
-						<img src="images/maii_menue_btn1.png" alt="">
-					</p>
-					<p class="xzh-mall-menue-grid-txt">洗化用品</p>
-				</a>
-				<a class="xzh-mall-menue-grid">
-					<p class="xzh-mall-menue-grid-img">
-						<img src="images/maii_menue_btn1.png" alt="">
-					</p>
-					<p class="xzh-mall-menue-grid-txt">洗化用品</p>
-				</a>
-				<a class="xzh-mall-menue-grid">
-					<p class="xzh-mall-menue-grid-img">
-						<img src="images/maii_menue_btn1.png" alt="">
-					</p>
-					<p class="xzh-mall-menue-grid-txt">洗化用品</p>
-				</a>
-				<a class="xzh-mall-menue-grid">
-					<p class="xzh-mall-menue-grid-img">
-						<img src="images/maii_menue_btn1.png" alt="">
-					</p>
-					<p class="xzh-mall-menue-grid-txt">洗化用品</p>
-				</a>
-				<a class="xzh-mall-menue-grid">
-					<p class="xzh-mall-menue-grid-img">
-						<img src="images/maii_menue_btn1.png" alt="">
-					</p>
-					<p class="xzh-mall-menue-grid-txt">洗化用品</p>
-				</a>
+				</a> -->
 			</div>
 			<div class="xzh-mall-adv">
 				<img src="images/mall_adv.jpg" alt="">
@@ -162,7 +108,6 @@
 	</div>
 	<script src="js/jquery-1.8.3.min.js"></script>
 	<script src="js/swiper.min.js"></script>
-	<script src="js/data.js"></script>
 	<script>
 		$(function(){
 			var mySwiper = new Swiper ('.xzh-mall-banner', {
@@ -174,25 +119,99 @@
 			});
 			;(function(){
 				var grid_tpl = [
-									'<a href="#" class="xzh-mall-recommend-grid">',
-										'<div class="xzh-mall-goods-img">',
-											'<img src="images/mall_goods.png" alt="">',
-										'</div>',
+									'<div class="xzh-mall-recommend-grid">',
+										'<a href="goods_detail.html?a=goodsdetail&id={#id#}" class="xzh-mall-goods-img">',
+											'<img src="{#thumb#}" alt="">',
+										'</a>',
 										'<div class="xzh-mall-goods-title">',
-											'商品信息商品信息1',
+											'{#title#}',
 										'</div>',
 										'<div class="xzh-mall-goods-price">',
-											'<div class="xzh-mall-goods-price-cart">',
-												'<img src="images/mall_red_cart.png" alt="">',
+											'<div class="xzh-mall-goods-price-cart" data-product-id={#id#}>',
+												'<img src="images/mall_red_cart.png" alt="" >',
 											'</div>',
 											'<div class="xzh-mall-goods-price-num">',
-												'￥<span class="xzh-mall-goods-price-number">29.8元</span>',
+												'￥<span class="xzh-mall-goods-price-number">{#productprice#}</span>',
 											'</div>',
 										'</div>',
-									'</a>'
+									'</div>'
 								].join("");
-				var data = 
-			})();        
+				var mall_menue_grid_tpl = ['<a href="mall_product_list.html?a=goodslist&id={#id#}" class="xzh-mall-menue-grid">',
+												'<p class="xzh-mall-menue-grid-img">',
+													'<img src="{#thumb#}" alt="">',
+												'</p>',
+												'<p class="xzh-mall-menue-grid-txt">{#name#}</p>',
+											'</a>'
+											].join('');
+				$.ajax({
+					'url':"http://zyg.cdn.51946.net/api.php",
+					'type':'post',
+					'data':{'a':'login','username':'admin','password':"admin"},
+					'dataType':'json',
+					'success':function(res){
+						console.log(res);
+						$.ajax({
+							'url':"http://zyg.cdn.51946.net/api.php",
+							'type':'post',
+							'data':{'a':'goodslist','token':res['data']['token']},
+							'dataType':'json',
+							'success':function(data){
+								console.log(data);
+								var data_list = data['data'];
+								var content = formateString(grid_tpl,data_list);
+								$(content).appendTo('.xzh-mall-recommend');
+								$('.xzh-mall-goods-price-cart').click(function(){
+									var add_cart_id = $(this).attr('data-product-id');
+									$.ajax({
+										'url':"http://zyg.cdn.51946.net/api.php",
+										'type':'post',
+										'data':{'a':'cart','token':res['data']['token'],'op':"add","id":add_cart_id,'total':1},
+										'dataType':'json',
+										'success':function(data){
+											console.log(data);
+										}
+									});
+								});
+							},
+							'error':function(XMLHttpRequest, textStatus, errorThrown){
+								console.log(XMLHttpRequest, textStatus, errorThrown);
+							}
+						});
+						$.ajax({
+							'url':"http://zyg.cdn.51946.net/api.php",
+							'type':'post',
+							'data':{'a':'categorylist','token':res['data']['token']},
+							'dataType':'json',
+							'success':function(data){
+								console.log(data);
+								var data_list = data['data'];
+								var content = formateString(mall_menue_grid_tpl,data_list);
+								$(content).appendTo('.xzh-mall-menue-ctn');
+							},
+							'error':function(XMLHttpRequest, textStatus, errorThrown){
+								console.log(XMLHttpRequest, textStatus, errorThrown);
+							}
+						});
+					},
+					'error':function(XMLHttpRequest, textStatus, errorThrown){
+						console.log(XMLHttpRequest, textStatus, errorThrown);
+					}
+				});
+			})();
+			function formateString(str,data){
+					var html = "";
+					if(data instanceof Array){
+						for(var i = 0 ;i<data.length;i++){
+							html += arguments.callee(str,data[i]);
+						}
+						return html;
+					}else{
+						//{#content#}
+						return str.replace(/\{#(\w+)#\}/g,function(match,key){
+							return typeof data === 'string' ? data:(data[key] != undefined ? data[key] : "");
+						})
+					}
+			}        
 		});
 	</script>
 </body>

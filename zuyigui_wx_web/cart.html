@@ -16,7 +16,7 @@
 			<span class="xzh-cart-editor">编辑&nbsp;&nbsp;</span>
 		</div>
 		<div class="xzh-inner-container">
-			<div class="xzh-cart-grid" data-check='0'>
+			<!-- <div class="xzh-cart-grid" data-check='0' data-total-price="0">
 				<div class="xzh-cart-grid-check">
 					<img src="images/cart_unchecked.png" alt="check">
 				</div>
@@ -37,117 +37,7 @@
 				<div class="xzh-cart-grid-num-ctn">
 					X <span class="xzh-cart-grid-num">1</span>
 				</div>
-			</div>
-			<div class="xzh-cart-grid" data-check='0'>
-				<div class="xzh-cart-grid-check">
-					<img src="images/cart_unchecked.png" alt="check">
-				</div>
-				<div class="xzh-cart-grid-img">
-					<a href="#"><img src="images/cart_goods.png" alt=""></a>
-				</div>
-				<div class="xzh-cart-grid-detail">
-					<div class="xzh-cart-grid-detail-title">
-						<a href="#">商品标题商品标题商品标题商品标题商品标题</a>
-					</div>
-					<div class="xzh-cart-grid-detail-type">
-						颜色：白色
-					</div>
-					<div class="xzh-cart-grid-detail-price">
-						￥<span class="xzh-cart-grid-detail-price-num">399.00</span>
-					</div>
-				</div>
-				<div class="xzh-cart-grid-num-ctn">
-					X <span class="xzh-cart-grid-num">1</span>
-				</div>
-			</div>
-			<div class="xzh-cart-grid" data-check='0'>
-				<div class="xzh-cart-grid-check">
-					<img src="images/cart_unchecked.png" alt="check">
-				</div>
-				<div class="xzh-cart-grid-img">
-					<a href="#"><img src="images/cart_goods.png" alt=""></a>
-				</div>
-				<div class="xzh-cart-grid-detail">
-					<div class="xzh-cart-grid-detail-title">
-						<a href="#">商品标题商品标题商品标题商品标题商品标题</a>
-					</div>
-					<div class="xzh-cart-grid-detail-type">
-						颜色：白色
-					</div>
-					<div class="xzh-cart-grid-detail-price">
-						￥<span class="xzh-cart-grid-detail-price-num">399.00</span>
-					</div>
-				</div>
-				<div class="xzh-cart-grid-num-ctn">
-					X <span class="xzh-cart-grid-num">1</span>
-				</div>
-			</div>
-			<div class="xzh-cart-grid" data-check='0'>
-				<div class="xzh-cart-grid-check">
-					<img src="images/cart_unchecked.png" alt="check">
-				</div>
-				<div class="xzh-cart-grid-img">
-					<a href="#"><img src="images/cart_goods.png" alt=""></a>
-				</div>
-				<div class="xzh-cart-grid-detail">
-					<div class="xzh-cart-grid-detail-title">
-						<a href="#">商品标题商品标题商品标题商品标题商品标题</a>
-					</div>
-					<div class="xzh-cart-grid-detail-type">
-						颜色：白色
-					</div>
-					<div class="xzh-cart-grid-detail-price">
-						￥<span class="xzh-cart-grid-detail-price-num">399.00</span>
-					</div>
-				</div>
-				<div class="xzh-cart-grid-num-ctn">
-					X <span class="xzh-cart-grid-num">1</span>
-				</div>
-			</div>
-			<div class="xzh-cart-grid" data-check='0'>
-				<div class="xzh-cart-grid-check">
-					<img src="images/cart_unchecked.png" alt="check">
-				</div>
-				<div class="xzh-cart-grid-img">
-					<a href="#"><img src="images/cart_goods.png" alt=""></a>
-				</div>
-				<div class="xzh-cart-grid-detail">
-					<div class="xzh-cart-grid-detail-title">
-						<a href="#">商品标题商品标题商品标题商品标题商品标题</a>
-					</div>
-					<div class="xzh-cart-grid-detail-type">
-						颜色：白色
-					</div>
-					<div class="xzh-cart-grid-detail-price">
-						￥<span class="xzh-cart-grid-detail-price-num">399.00</span>
-					</div>
-				</div>
-				<div class="xzh-cart-grid-num-ctn">
-					X <span class="xzh-cart-grid-num">1</span>
-				</div>
-			</div>
-			<div class="xzh-cart-grid" data-check='0'>
-				<div class="xzh-cart-grid-check">
-					<img src="images/cart_unchecked.png" alt="check">
-				</div>
-				<div class="xzh-cart-grid-img">
-					<a href="#"><img src="images/cart_goods.png" alt=""></a>
-				</div>
-				<div class="xzh-cart-grid-detail">
-					<div class="xzh-cart-grid-detail-title">
-						<a href="#">商品标题商品标题商品标题商品标题商品标题</a>
-					</div>
-					<div class="xzh-cart-grid-detail-type">
-						颜色：白色
-					</div>
-					<div class="xzh-cart-grid-detail-price">
-						￥<span class="xzh-cart-grid-detail-price-num">399.00</span>
-					</div>
-				</div>
-				<div class="xzh-cart-grid-num-ctn">
-					X <span class="xzh-cart-grid-num">3</span>
-				</div>
-			</div>
+			</div> -->
 		</div>
 		<div class="xzh-cart-pay-menue">
 			<div class="xzh-cart-pay-menue-all-check" data-check='0'>
@@ -169,9 +59,73 @@
 			var cartEditorFlag = 0;
 			var goodsNUm = 0;
 			var totalPrice = 0;
-			cartEditor();
-			cartCheck();
-			checkAll();
+			var cart_grid_tpl = [
+				'<div class="xzh-cart-grid" data-check="0" data-total-price={#totalprice#}>',
+					'<div class="xzh-cart-grid-check">',
+						'<img src="images/cart_unchecked.png" alt="check">',
+					'</div>',
+					'<div class="xzh-cart-grid-img">',
+						'<a href="#"><img src="{#thumb#}" alt="check"></a>',
+					'</div>',
+					'<div class="xzh-cart-grid-detail">',
+						'<div class="xzh-cart-grid-detail-title">',
+							'<a href="#">{#title#}</a>',
+						'</div>',
+						'<div class="xzh-cart-grid-detail-type">',
+							'{#optionname#}',
+						'</div>',
+						'<div class="xzh-cart-grid-detail-price">',
+							'￥<span class="xzh-cart-grid-detail-price-num">{#marketprice#}</span>',
+						'</div>',
+					'</div>',
+					'<div class="xzh-cart-grid-num-ctn">',
+						'X <span class="xzh-cart-grid-num">{#total#}</span>',
+					'</div>',
+				'</div>'
+			].join('');
+			$.ajax({
+					'url':"http://zyg.cdn.51946.net/api.php",
+					'type':'post',
+					'data':{'a':'login','username':'admin','password':"admin"},
+					'dataType':'json',
+					'success':function(res){
+						console.log(res);
+						$.ajax({
+							'url':"http://zyg.cdn.51946.net/api.php",
+							'type':'post',
+							'data':{'a':'cart',"token":res['data']['token']},
+							'dataType':'json',
+							'success':function(res){
+								for(var i = 0;i<res['data'].length;i++){
+									res['data'][i]['thumb'] = res['data'][i]['goods']['thumb'];
+									res['data'][i]['title'] = res['data'][i]['goods']['title'];
+								}
+								var cart_grid_content = formateString(cart_grid_tpl,res['data']);
+								$(cart_grid_content).appendTo('.xzh-inner-container');
+								cartEditor();
+								cartCheck();
+								checkAll();
+							}
+						})
+					},
+					'error':function(XMLHttpRequest, textStatus, errorThrown){
+						console.log(XMLHttpRequest, textStatus, errorThrown);
+					}
+				});
+			function formateString(str,data){
+				var html = "";
+				if(data instanceof Array){
+					for(var i = 0 ;i<data.length;i++){
+						html += arguments.callee(str,data[i]);
+					}
+					return html;
+				}else{
+					//{#content#}
+					return str.replace(/\{#(\w+)#\}/g,function(match,key){
+						return typeof data === 'string' ? data:(data[key] != undefined ? data[key] : "");
+					})
+				}
+			}
 			function cartEditor(){
 				$('.xzh-cart-editor').click(function(){
 					if(cartEditorFlag == 0){
@@ -191,17 +145,20 @@
 					var flag = $(this).attr('data-check');
 					var num = parseInt($(this).find('.xzh-cart-grid-num').html());
 					var price = parseFloat($(this).find('.xzh-cart-grid-detail-price-num').html());
+					var product_totol_price = parseFloat($(this).attr('data-total-price'));
 					if(flag == '0'){
 						$(this).find('.xzh-cart-grid-check').children('img').attr('src','images/cart_checked.png');
 						$(this).attr('data-check','1');
 						cartGoodsNum(num);
-						cartPrice(num,price);
+						cartPrice(product_totol_price);
 						console.log('a');
 					}else{
 						$(this).find('.xzh-cart-grid-check').children('img').attr('src','images/cart_unchecked.png');
+						$('.xzh-cart-pay-menue-all-check').find('img').attr('src','images/cart_unchecked.png');
+						$('.xzh-cart-pay-menue-all-check').attr('data-check',0);
 						$(this).attr('data-check','0');
 						cartGoodsNum(-num);
-						cartPrice(-num,price);
+						cartPrice(-product_totol_price);
 						console.log('b');
 					}	
 				});
@@ -211,10 +168,9 @@
 				$('.xzh-cart-num').html(goodsNUm);
 				$('.xzh-cart-pay-nums').html(goodsNUm);
 			}
-			function cartPrice(num,price){
-				var temp = parseFloat(num*price);
-				totalPrice+=temp;
-				$('.xzh-cart-pay-menue-total-price-num').html(totalPrice.toFixed(2));
+			function cartPrice(product_totol_price){
+				totalPrice+=product_totol_price;
+				$('.xzh-cart-pay-menue-total-price-num').html(totalPrice);
 			}
 			function checkAll(){
 				$('.xzh-cart-pay-menue-all-check').click(function(){
@@ -222,13 +178,15 @@
 						$('.xzh-cart-grid-check').show();
 						$('.xzh-cart-pay-menue-all-check').find('img').attr('src','images/cart_checked.png');
 						cartEditorFlag = 1;
+						goodsNUm = 0;
+						totalPrice = 0;
 						$('.xzh-cart-grid').each(function(){
 							$(this).find('.xzh-cart-grid-check').children('img').attr('src','images/cart_checked.png');
 							$(this).attr('data-check','1');
 							var num = parseInt($(this).find('.xzh-cart-grid-num').html());
 							var price = parseFloat($(this).find('.xzh-cart-grid-detail-price-num').html());
 							cartGoodsNum(num);
-							cartPrice(num,price);
+							cartPrice(parseFloat($(this).attr('data-total-price')));
 						});
 						$(this).attr('data-check','1');
 					}else{

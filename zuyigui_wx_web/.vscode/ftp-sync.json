@@ -1,0 +1,24 @@
+{
+    "remotePath": "./wwwroot/wx_tpl",
+    "host": "zyg.cdn.51946.net",
+    "username": "zyg",
+    "password": "b5f7j5E6",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "uploadOnSave": false,
+        "extensionsToInclude": [],
+        "path": ""
+    }
+}
